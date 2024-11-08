@@ -40,7 +40,7 @@ button {
 
 button:hover {
   color: #f4f4f4;
-  background: #242424;
+  /* background: #242424; */
 }
 
 .visually-hidden {
