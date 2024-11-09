@@ -294,8 +294,8 @@ function addStars(starsCount, rating) {
     svg.innerHTML = `
       <defs>
         <linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="${percent}%" stop-color="var(--accent-color)" />
-          <stop offset="${percent}%" stop-color="var(--rating-color)" />
+          <stop offset="${percent}%" stop-color="var(--color-accent)" />
+          <stop offset="${percent}%" stop-color="var(--color-rating)" />
         </linearGradient>
       </defs>
       <use href="${iconsPath}#star" fill="url(#${gradientId})"></use>

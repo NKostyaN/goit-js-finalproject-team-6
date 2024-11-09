@@ -3,7 +3,7 @@
 /* Загальні стилі */
 .quotes .container {
   align-items: flex-start;
-  background: var(--primary-color);
+  background: var(--color-primary);
   border-radius: 20px;
   padding: 40px;
   max-width: 444px;
@@ -28,7 +28,7 @@
 .quote-icon-wrapper {
   width: 34px;
   height: 32px;
-  background: var(--rating-color);
+  background: var(--color-rating);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +38,7 @@
   border-radius: 50%;
 }
 .quote-news > .quote-icon-wrapper {
-  background-color: var(--primary-color);
+  background-color: var(--color-primary);
   padding: 0 4px;
   width: 34px;
   height: 32px;
@@ -47,7 +47,7 @@
 .quote-icon {
   width: 20px;
   height: 20px;
-  fill: var(--white-color);
+  fill: var(--color-white);
 }
 
 .quote-wraper {
@@ -71,7 +71,7 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
-  color: var(--white-color);
+  color: var(--color-white);
 }
 
 /* Текст цитати */
@@ -86,7 +86,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  color: var(--text-secondary-color);
+  color: var(--color-text-secondary);
   width: 314px;
   height: auto;
 }
@@ -96,7 +96,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: var(--white-color);
+  color: var(--color-white);
 }
 
 /* Стилі для секції з картинкою */

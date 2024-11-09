@@ -5,16 +5,16 @@
     margin-bottom: 80px;
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
     margin-bottom: 100px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1440px) {
     margin-bottom: 96px;
   }
 }
 
-.header .container {
+.container .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -92,13 +92,13 @@
 .nav-link {
   padding: 6px 12px;
   border-radius: 30px;
-  color: var(--color-grey);
+  color: var(--color-white);
   background-color: var(--color-black);
 }
 
 .nav-link.active {
   color: var(--color-black);
-  background-color: var(--color-grey);
+  background-color: var(--color-white);
 }
 /* #endregion Navigation */
 
@@ -148,6 +148,6 @@
 
 .soc-item:hover .icon,
 .soc-item:focus .icon {
-  fill: var(--color-grey);
+  fill: var(--color-white);
 }
 /* #endregion Socials */
