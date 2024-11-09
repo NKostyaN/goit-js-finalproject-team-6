@@ -1,0 +1,153 @@
+@import url(./base.css);
+
+/* Загальні стилі */
+.quotes .container {
+  align-items: flex-start;
+  background: var(--primary-color);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 444px;
+  margin: 0 auto;
+  margin-top: 16px;
+}
+.quote-news.container {
+  background-color: #fff;
+}
+/* Стиль для блоку з цитатою */
+.quote-of-day,
+.quote-news {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 0;
+  width: 100%;
+  max-width: 364px;
+}
+
+.quote-icon-wrapper {
+  width: 34px;
+  height: 32px;
+  background: var(--rating-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 0 auto; */
+  padding: 0 4px;
+
+  border-radius: 50%;
+}
+.quote-news > .quote-icon-wrapper {
+  background-color: var(--primary-color);
+  padding: 0 4px;
+  width: 34px;
+  height: 32px;
+}
+
+.quote-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--white-color);
+}
+
+.quote-wraper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.quote-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: relative;
+}
+
+.quote-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--white-color);
+}
+
+/* Текст цитати */
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quote-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--text-secondary-color);
+  width: 314px;
+  height: auto;
+}
+
+.quote-author {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--white-color);
+}
+
+/* Стилі для секції з картинкою */
+.quote-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 16px;
+  max-width: 444px;
+}
+
+.quote-image-img {
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Блок новин */
+
+.quote-news-wraper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quote-news-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.quote-news-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.quote-news-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(36, 36, 36, 0.6);
+}
+
+.quote-news-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
