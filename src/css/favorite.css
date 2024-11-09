@@ -1,0 +1,457 @@
+.favorites {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+@media screen and (min-width: 768px) {
+    .favorites {
+        padding-top: 100px;
+        padding-bottom: 100px;
+         
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .favorites {
+        padding-top: 90px;
+        padding-bottom: 51px;
+
+    }
+}
+
+.favorites-tittle {
+    color: #242424;
+    font-family: NeueMontrealRegular;
+    font-size: 28px;
+    font-style: normal;
+    line-height: 38px;
+    letter-spacing: -0.56px;
+}
+
+@media screen and (min-width: 768px) {
+    .favorites-tittle {
+        font-size: 44px;
+    }
+} 
+
+.features-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .features-container {
+        flex-direction: row;
+        gap: 16px;
+        margin-top: 16px;
+    }
+}
+
+.favorites-container {
+    min-width: 320px;
+    max-width: 480px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+    .favorites-container {
+        max-width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;  
+    }  
+}
+
+@media screen and (min-width: 1440px) {
+    .favorites-container {
+        max-width: 1440px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+ }
+
+@media screen and (min-width: 1440px) {
+    .quote-conteiner {
+        display: flex;
+        flex-direction: column;
+        margin-right: 32px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .favorites-thumb {
+        display: flex;
+        margin-top: 44px;      
+    }
+}
+
+.favorites-quote {
+    display:flex; 
+    position: relative;
+    border-radius: 20px;
+    background: #242424;
+    margin-top:20px; 
+    padding: 20px;
+
+}
+
+.favorites-quote > man-svg {
+    position: absolute;
+}
+
+@media screen and (min-width: 768px) {
+    .favorites-quote {
+        margin-top: 32px;
+        padding: 40px;        
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .favorites-quote {
+        margin-top: 0; 
+        width: 494px;       
+    }
+}
+
+.commas-svg {
+position: absolute;
+right: 20px;
+
+}
+
+.quote-tittle {
+    color: #F4F4F4;
+    font-family: NeueMontrealRegular;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 6px;
+   
+}
+
+@media screen and (min-width: 768px) {
+    .quote-tittle {
+        font-size: 24px;
+    }
+}
+
+.quote-text {
+    color: rgba(244, 244, 244, 0.60);
+    font-family: NeueMontrealRegular;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.quote-content {
+    display: flex;
+    flex-direction: column; 
+    padding-left: 48px;         
+}
+
+@media screen and (min-width: 768px) {
+    .quote-content {
+        width: 574px;
+    }
+}
+
+.quote-author {
+    margin-top: 18px;
+    color: #F4F4F4;    
+    font-family: NeueMontrealRegular;
+    font-size: 16px;
+    line-height: 24px;      
+}
+
+.man-svg {
+    position: absolute;  
+}
+
+.features {
+    border-radius: 20px;
+    background: #FFF;
+}
+
+.features-tittle { 
+    color: #242424;
+    font-family: Neue MontrealMedium;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;     
+}
+
+@media screen and (min-width: 768px) {
+    .features-tittle {
+        font-size: 24px;
+    }
+}
+
+.favorites-text { 
+    color: rgba(36, 36, 36, 0.60);
+    font-family: NeueMontrealRegular;
+    font-size: 14px;
+    line-height: 18px;   
+}
+
+.features-content {
+    display: inline-flex;
+    padding-top: 20px; 
+    padding-bottom:20px; 
+    padding-left: 20px;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+@media screen and (min-width: 768px) {
+    .features-content {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 25px;
+        padding-right: 200px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .features-content {
+    padding-right: 95px;
+}    
+}
+    
+.favorites-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;  
+}
+
+.text-pozition {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 15px;
+    width: 119px;
+}
+
+.default-text {
+    color: #242424; 
+    margin-top: 0;
+}
+
+
+@media screen and (min-width: 768px) {
+    .default-text {
+        font-size: 18px;
+    }
+}
+
+
+.js-hidden-text {
+    display: flex;
+    margin-top: 40px;
+    text-align: center;
+    
+    margin-left: auto;
+    margin-right: auto;  
+    padding-left: 9px;
+    padding-right: 9px;  
+}
+
+
+
+@media screen and (min-width: 768px){
+    .js-hidden-text {
+        margin-top: 140px;  
+        width: 554px;
+    } 
+}
+
+@media screen and (min-width: 1440px) {
+    .js-hidden-text {   
+        margin: auto;       
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .gallery-list {
+        margin-top: 0px;
+    }
+}
+
+.gallery-list {
+    display: flex;
+    margin-top: 40px;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+
+@media screen and (min-width: 768px) {
+.gallery-list {
+       gap:16px; 
+       margin-top: 64px;
+       margin-bottom: 32px;
+    }
+}
+
+
+@media screen and (min-width: 1440px) {
+    .gallery-list {
+        margin-top: 0px;
+        gap:  32px 16px;        
+    }
+}
+
+.exercise-card {
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+    border-radius: 15px;
+    background: #FFF;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.exercise-card:hover, 
+.exercise-card:focus{
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .12),
+    0px 1px 1px rgba(0, 0, 0, .14),
+    0px 2px 1px rgba(0, 0, 0, .2); 
+}
+
+@media screen and (min-width: 768px) {
+.exercise-card {
+       width: 343px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .exercise-card {
+        width: 405px;
+    }
+}
+
+.workout {
+    display: inline-block;
+    font-family: NeueMontrealRegular;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+    padding:  5px 7.5px; 
+    border-radius: 15px;
+    border: 1px solid #242424;
+}
+
+.exercise-btn {
+    font-family: inherit;
+    font-size: 14px;
+    padding:0;
+    line-height: 18px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 54px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    min-height: 30px;
+    background-color: inherit;
+    transition: font-size 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.exercise-btn:hover,
+.exercise-btn:focus {
+    font-size: 16px;
+}
+
+.exersise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.favorite-exercise-name {
+    font-family: NeueMontrealRegular;
+    font-size: 20px;
+    line-height: 20px;
+    line-height: 20px
+}
+
+@media screen and (min-width: 768px) {
+    .favorite-exercise-name {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+.exercise-tittle {
+    display: flex;
+    margin-top: 27px;
+    text-align: left;    
+    gap: 16px;
+}
+
+.man-svg-thumb {
+    width: 24px;
+    height: 24px;
+}
+
+.exercise-trash {
+    display: flex;
+    align-items: center;
+}
+
+.trash-btn {
+    margin-left: 8px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: inherit;
+}
+
+.trash-svg {
+    stroke: black;
+    fill: transparent;    
+}
+
+.arrow-svg {
+    stroke: black;
+}
+
+.trash-svg:hover,
+.trash-svg:focus
+
+{
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+
+.exercise-category {
+    color: rgba(36, 36, 36, 0.40);  
+    font-family: NeueMontrealRegular;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+   
+}
+
+.exercise-category:not(:last-child) {
+margin-right: 10px;
+}
+
+.exercise-category>span {
+    color: #242424;
+}
+
+.exercice-information {
+    display: flex;
+    justify-content:space-between;
+    margin-top: 16px;
+}
+
