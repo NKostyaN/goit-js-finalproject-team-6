@@ -4,23 +4,14 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color: #242424;
-  background: #f4f4f4;
+  color: var(--color-black);
+  background: var(--color-white);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
-  --primary-color: #242424;
-  --white-color: #f4f4f4;
-  --text-secondary-color: rgba(244, 244, 244, 0.6);
-  --title-color: rgba(244, 244, 244, 0.4);
-  --rating-color: rgba(244, 244, 244, 0.2);
-  --modal-backdrop: rgba(4, 4, 4, 0.4);
-  --accent-color: #eea10c;
-  --tran-fast: 250ms ease-in-out;
 }
 
 html {
@@ -33,7 +24,7 @@ body {
 }
 
 button {
-  border: 1px solid #f4f4f4;
+  border: 1px solid var(--color-white);
   border-radius: 30px;
   padding: 12px 24px;
 }

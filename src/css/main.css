@@ -30,18 +30,20 @@
 .exercises-filters li{
   padding: 8px 0px;
   margin: 0 20px 0 0;
+  cursor: pointer;
 }
 
-.exercises-filters__selected{
-  color: #242424;
+.exercises-filters li.exercises-filters__selected{
+  color: var(--color-black);
   position: relative;
+  cursor: default;
 }
 
-.exercises-filters__selected::after{
+.exercises-filters li.exercises-filters__selected::after{
   content: '';
   display: block;
   position: absolute;
-  background-color: #242424;
+  background-color: var(--color-black);
   height: 4px;
   border-radius: 2px;
   bottom: 0;
@@ -83,6 +85,7 @@
   margin-bottom: 6px;
   font-weight: 400;
   color: #F4F4F4;
+  text-transform: capitalize;
 }
 
 .exercises__item .text-overlay p{
@@ -113,11 +116,13 @@
   justify-content: center;
   border-radius: 100%;
   border: 1px solid transparent;
+  cursor: pointer;
 }
 
 .exercises-pagination li.exercises-pagination__current{
-  color: #242424;
-  border-color: #242424;
+  color: var(--color-black);
+  border-color: var(--color-black);
+  cursor: default;
 }
 
 @media (min-width: 768px) {

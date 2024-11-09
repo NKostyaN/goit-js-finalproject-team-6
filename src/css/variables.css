@@ -1,0 +1,22 @@
+:root {
+  /* Colors */
+  --color-black: #242424;
+  --color-white: #f4f4f4;
+  --color-grey: rgba(36, 36, 36, 0.1);
+  --color-darkgrey: rgba(36, 36, 36, 0.8);
+  --color-grey-numbers: #d4d4d4;
+
+  --color-text-secondary: rgba(244, 244, 244, 0.6);
+  --color-title: rgba(244, 244, 244, 0.4);
+  --color-rating: rgba(244, 244, 244, 0.2);
+  --color-modal-backdrop: rgba(4, 4, 4, 0.4);
+  --color-accent: #eea10c;
+
+  /* Animations */
+  --animation-delay: 0.2s;
+  --animation: var(--animation-delay) ease-in-out;
+  --tran-fast: 250ms ease-in-out;
+
+  /* Others */
+  --trns: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
