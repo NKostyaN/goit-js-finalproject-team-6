@@ -30,8 +30,8 @@ button {
 }
 
 button:hover {
-  color: var(--color-white);
-  background: var(--color-black);
+  color: #f4f4f4;
+  /* background: #242424; */
 }
 
 .visually-hidden {
