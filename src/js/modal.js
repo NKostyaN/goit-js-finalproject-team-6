@@ -1,5 +1,6 @@
 import iconsPath from '../img/icons/sprites.svg';
 import { api } from './api';
+import { getFavorites, addToFavorites, removeFromFavorites } from './storage';
 
 const SELECTORS = {
   closeModalButton: '[data-modal-close]',
@@ -271,25 +272,6 @@ export function initModalListeners() {
       loadModalData(exerciseId);
     });
   });
-}
-
-function getFavorites() {
-  return JSON.parse(localStorage.getItem('favorites')) || [];
-}
-
-function addToFavorites(exerciseId) {
-  const favorites = getFavorites();
-  favorites.push(exerciseId);
-  localStorage.setItem('favorites', JSON.stringify(favorites));
-}
-
-function removeFromFavorites(exerciseId) {
-  const favorites = getFavorites();
-  const index = favorites.indexOf(exerciseId);
-  if (index !== -1) {
-    favorites.splice(index, 1);
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-  }
 }
 
 function updateStarRating(rating) {
