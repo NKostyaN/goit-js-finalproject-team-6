@@ -1,0 +1,6 @@
+/*
+<!-- why no axios is package.json -->
+<!-- dev run build -->
+active home or favorite class. maybe js
+*/
+
