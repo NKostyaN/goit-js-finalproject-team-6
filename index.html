@@ -11,17 +11,16 @@
       rel="stylesheet"
     />
     <script type="module" crossorigin src="/goit-js-finalproject-team-6/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/nav-Bgk97ca9.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/menu-BaFOxj4K.js">
     <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/vendor-CNNbG8jS.js">
-    <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/nav-C3OPm_dR.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/menu-BvM6BdZC.css">
   </head>
   <body>
-    <div class="container">
-      <header class="header">
+    <header class="header">
   <div class="container">
     <a class="header-logo" href="./index.html" aria-label="Site logo">
       <svg class="logo-svg">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#logo"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#logo-dark"></use>
       </svg>
     </a>
 
@@ -45,7 +44,7 @@
       target="_blank"
     >
       <svg class="icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#facebook"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#facebook"></use>
       </svg>
     </a>
   </li>
@@ -57,7 +56,7 @@
       target="_blank"
     >
       <svg class="icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#instagram"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#instagram"></use>
       </svg>
     </a>
   </li>
@@ -69,7 +68,7 @@
       target="_blank"
     >
       <svg class="icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#youtube"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#youtube"></use>
       </svg>
     </a>
   </li>
@@ -84,13 +83,139 @@
       onclick="toggleMenu('open')"
     >
       <svg class="burger-menu-icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#burger"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#burger"></use>
       </svg>
     </button>
   </div>
 </header>
 
-      <div class="menu-backdrop">
+
+    <main>
+      <div class="container">
+        <h2 class="main-title">Home page</h2>
+        <div class="exercises-row">
+  <div class="exercises-filters">
+    <ul>
+      <li class="exercises-filters__selected" id="Muscles">Muscles</li>
+      <li id="Body%20parts">Body parts</li>
+      <li id="Equipment">Equipment</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exercises exercises-row" id="exercises-container"></div>
+
+<div class="exercises-row">
+  <div class="exercises-pagination">
+    <ul></ul>
+  </div>
+</div>
+      </div>
+    </main>
+
+    <button class="button-start" data-modal-open value="64f389465ae26083f39b17a2">
+  <p>TMP Show Modal</p>
+</button>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-content-start">
+        <a class="footer-logo" href="./index.html" aria-label="Site logo">
+          <svg class="logo-svg">
+            <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#logo-light"></use>
+          </svg>
+        </a>
+
+        <ul class="nav-list">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" aria-label="Home page">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./favorites.html" aria-label="Favorites page"
+      >Favorites</a
+    >
+  </li>
+</ul>
+
+<ul class="soc-list">
+  <li class="soc-item">
+    <a
+      href="https://www.facebook.com/goITclub/"
+      class="soc-link"
+      aria-label="Facebook"
+      target="_blank"
+    >
+      <svg class="icon">
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#facebook"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="soc-item">
+    <a
+      href="https://www.instagram.com/goitclub/ "
+      class="soc-link"
+      aria-label="Instagram"
+      target="_blank"
+    >
+      <svg class="icon">
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#instagram"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="soc-item">
+    <a
+      href="https://www.youtube.com/c/GoIT"
+      class="soc-link"
+      aria-label="Youtube"
+      target="_blank"
+    >
+      <svg class="icon">
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#youtube"></use>
+      </svg>
+    </a>
+  </li>
+</ul>
+
+
+      </div>
+
+      <div class="footer-content-end">
+        <p class="footer-cta-text">
+          Transforming your <em>body</em> shape with us
+        </p>
+
+        <div class="subscription">
+          <p class="footer-subscribe-text">
+            Subscribe and learn about new exercises!
+          </p>
+          <form class="footer-form">
+            <input type="email" placeholder="Email" required />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <p class="footer-note-copyright">Your Energy. All rights reserved.</p>
+
+      <div class="footer-links">
+        <a class="footer-link" href="#" aria-label="Privacy Policy"
+          >Privacy Policy</a
+        >
+        /
+        <a class="footer-link" href="#" aria-label="Terms of Service"
+          >Terms of Service</a
+        >
+      </div>
+
+      <p class="footer-note-year">&copy;2023</p>
+    </div>
+  </div>
+</footer>
+
+    <div class="menu-backdrop">
   <div class="menu">
     <div class="button-wrapper">
       <button
@@ -100,7 +225,7 @@
         onclick="toggleMenu();"
       >
         <svg class="close-btn-icon">
-          <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#close"></use>
+          <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#menu-close"></use>
         </svg>
       </button>
     </div>
@@ -124,7 +249,7 @@
       target="_blank"
     >
       <svg class="icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#facebook"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#facebook"></use>
       </svg>
     </a>
   </li>
@@ -136,7 +261,7 @@
       target="_blank"
     >
       <svg class="icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#instagram"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#instagram"></use>
       </svg>
     </a>
   </li>
@@ -148,7 +273,7 @@
       target="_blank"
     >
       <svg class="icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#youtube"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#youtube"></use>
       </svg>
     </a>
   </li>
@@ -159,150 +284,11 @@
 </div>
 
 
-    </div>
-    <main>
-      <div class="container">
-        <div class="exercises-row">
-  <div class="exercises-filters">
-    <ul>
-      <li class="exercises-filters__selected" id="Muscles">Muscles</li>
-      <li id="Body%20parts">Body parts</li>
-      <li id="Equipment">Equipment</li>
-    </ul>
-  </div>
-</div>
-
-<div class="exercises exercises-row" id="exercises-container"></div>
-
-<div class="exercises-row">
-  <div class="exercises-pagination">
-    <ul></ul>
-  </div>
-</div>
-        <section class="quotes container">
-  <!-- Quote -->
-  <div class="quote-of-day container">
-    <div class="quote-icon-wrapper" width="32" height="32">
-      <svg class="quote-icon">
-        <!-- Icon Runner -->
-        <use
-          href="../img/icons/sprites.svg#running-man"
-          width="20"
-          height="20"
-        ></use>
-      </svg>
-    </div>
-    <div class="quote-wraper">
-      <div class="quote-header">
-        <h2 class="quote-title">Quote of the Day</h2>
-        <!-- <div class="quote-icon-wrapper"> -->
-        <svg class="quote-icon" width="24" height="24">
-          <!-- Icon Commas -->
-          <use href="../img/icons/sprites.svg#quotes"></use>
-        </svg>
-        <!-- </div> -->
-      </div>
-      <div class="quote">
-        <p class="quote-text">
-          A lot of times I find that people who are blessed with the most talent
-          don't ever develop that attitude, and the ones who aren't blessed in
-          that way are the most competitive and have the biggest heart.
-        </p>
-        <p class="quote-author">Tom Brady</p>
-      </div>
-    </div>
-  </div>
-  <!-- End Quote -->
-
-  <div class="quote-image">
-    <!-- Picture -->
-    <picture class="quote-image-img">
-      <!-- Desktop -->
-      <source
-        media="(min-width: 1200px)"
-        srcset="../img/quote/desktop-1x.webp 1x, ../img/quote/desktop-2x.webp 2x, ../img/quote/desktop-3x.webp 3x"
-        type="image/webp"
-      />
-      <source
-        media="(min-width: 1200px)"
-        srcset="../img/quote/desktop-1x.png 1x, ../img/quote/desktop-2x.png 2x, ../img/quote/desktop-3x.png 3x"
-      />
-      <!-- Tablet -->
-      <source
-        media="(min-width: 768px)"
-        srcset="../img/quote/tablet-1x.webp 1x, ../img/quote/tablet-2x.webp 2x, ../img/quote/tablet-3x.webp 3x"
-        type="image/webp"
-      />
-      <source
-        media="(min-width: 768px)"
-        srcset="../img/quote/tablet-1x.png 1x, ../img/quote/tablet-2x.png 2x, ../img/quote/tablet-3x.png 3x"
-      />
-      <!-- Mobile -->
-      <source
-        media="(max-width: 767px)"
-        srcset="../img/quote/mobile-1x.webp 1x, ../img/quote/mobile-2x.webp 2x, ../img/quote/mobile-3x.webp 3x"
-        type="image/webp"
-      />
-      <source
-        media="(max-width: 767px)"
-        srcset="../img/quote/mobile-1x.png 1x, ../img/quote/mobile-2x.png 2x, ../img/quote/mobile-3x.png 3x"
-      />
-      <img
-        src="../img/quote/mobile-1x.png"
-        alt="women sportswear taking break from workout"
-        loading="lazy"
-      />
-    </picture>
-    <!-- End Picture -->
-  </div>
-  <!-- News -->
-  <div class="quote-news container">
-    <div class="quote-icon-wrapper">
-      <svg class="quote-icon">
-        <!-- Icon Gantel -->
-        <use href="../img/icons/sprites.svg#dumbbell"></use>
-      </svg>
-    </div>
-    <div class="quote-news-wraper">
-      <div class="quote-news-header">
-        <h2 class="quote-news-title">110 min</h2>
-        <p class="quote-news-subtitle">Daily norm of sports</p>
-      </div>
-      <p class="quote-news-text">
-        The World Health Organization recommends at least 150 minutes of
-        moderate-intensity aerobic physical activity throughout the week for
-        adults aged 18-64. However, what happens if we adjust that number to 110
-        minutes every day? While it might seem like a high number to hit,
-        dedicating 110 minutes daily to sporting activities may offer
-        unparalleled benefits to physical health, mental well-being, and overall
-        quality of life.
-      </p>
-    </div>
-  </div>
-  <!-- End News -->
-</section>
-
-      </div>
-    </main>
-    <div class="container">
-      <button class="button-start" data-modal-open value="64f389465ae26083f39b17a2">
-  <p>TMP Show Modal</p>
-</button>
-
-      <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Your Energy. All rights reserved.
-    </p>
-  </div>
-</footer>
-
-    </div>
     <div class="backdrop visually-hidden" data-modal>
   <div class="modal">
     <button class="btn-modal-close" data-modal-close>
       <svg class="icon icon-modal-close">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#close"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#close"></use>
       </svg>
     </button>
 
@@ -335,7 +321,7 @@
   <div class="add-rating-modal visually-hidden">
     <button class="btn-modal-close" data-add-rating-close>
       <svg class="icon icon-modal-close">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#close"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#close"></use>
       </svg>
     </button>
     <form class="add-rating-form" method="post">
@@ -351,7 +337,7 @@
             value="1"
           />
           <svg class="icon icon-modal-rating-star" width="24" height="24">
-            <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#star"></use>
+            <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#star"></use>
           </svg>
         </label>
         <label class="star-radio-btn">
@@ -362,7 +348,7 @@
             value="2"
           />
           <svg class="icon icon-modal-rating-star" width="24" height="24">
-            <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#star"></use>
+            <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#star"></use>
           </svg>
         </label>
         <label class="star-radio-btn">
@@ -373,7 +359,7 @@
             value="3"
           />
           <svg class="icon icon-modal-rating-star" width="24" height="24">
-            <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#star"></use>
+            <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#star"></use>
           </svg>
         </label>
         <label class="star-radio-btn">
@@ -384,7 +370,7 @@
             value="4"
           />
           <svg class="icon icon-modal-rating-star" width="24" height="24">
-            <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#star"></use>
+            <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#star"></use>
           </svg>
         </label>
         <label class="star-radio-btn">
@@ -395,7 +381,7 @@
             value="5"
           />
           <svg class="icon icon-modal-rating-star" width="24" height="24">
-            <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#star"></use>
+            <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#star"></use>
           </svg>
         </label>
       </div>
@@ -425,5 +411,7 @@
 
 
 
+    <script src="./js/menu.js"></script>
+    <script src="./js/nav.js"></script>
   </body>
 </html>

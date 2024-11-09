@@ -12,15 +12,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script type="module" crossorigin src="/goit-js-finalproject-team-6/assets/nav-Bgk97ca9.js"></script>
-    <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/nav-C3OPm_dR.css">
+    <script type="module" crossorigin src="/goit-js-finalproject-team-6/assets/menu-BaFOxj4K.js"></script>
+    <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/menu-BvM6BdZC.css">
   </head>
   <body>
     <header class="header">
   <div class="container">
     <a class="header-logo" href="./index.html" aria-label="Site logo">
       <svg class="logo-svg">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#logo"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#logo-dark"></use>
       </svg>
     </a>
 
@@ -44,7 +44,7 @@
       target="_blank"
     >
       <svg class="icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#facebook"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#facebook"></use>
       </svg>
     </a>
   </li>
@@ -56,7 +56,7 @@
       target="_blank"
     >
       <svg class="icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#instagram"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#instagram"></use>
       </svg>
     </a>
   </li>
@@ -68,7 +68,7 @@
       target="_blank"
     >
       <svg class="icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#youtube"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#youtube"></use>
       </svg>
     </a>
   </li>
@@ -83,82 +83,90 @@
       onclick="toggleMenu('open')"
     >
       <svg class="burger-menu-icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#burger"></use>
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#burger"></use>
       </svg>
     </button>
   </div>
 </header>
 
+
     <main>
-  <section class="favorites">
-    <div class="favorites-container">
-      <h1 class="favorites-tittle">Favorites</h1>
-
-      <div class="favorites-thumb">
-        <div class="quote-conteiner">
-          <div class="favorites-quote">
-            <svg class="man-svg" width="34" height="32">
-              <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#icon-icon"></use>
-              
-            </svg>
-
-            <div class="quote-content">
-              <svg class="commas-svg" width="20" height="20">
-                <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#icon-inverted-commas"></use>
-              </svg>
-
-              <h2 class="quote-tittle">Quote of the day</h2>
-
-              <p class="quote-text">
-                A lot of times I find that people who are blessed with the most
-                talent don't ever develop that attitude, and the ones who aren't
-                blessed in that way are the most competitive and have the
-                biggest heart.
-              </p>
-              <p class="quote-author"></p>
-            </div>
-          </div>
-
-          <div class="features-container">
-            <div class="features">
-              <div class="features-content">
-                <svg width="20" height="20">
-                  <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#icon-dumbbell-black"></use>
-                </svg>
-                <div class="text-pozition">
-                  <p class="features-tittle">110 min</p>
-                  <p class="favorites-text">Daily norm of sports</p>
-                </div>
-              </div>
-            </div>
-
-            <img
-              class="favorites-img"
-              srcset="/goit-js-finalproject-team-6/assets/mobile-1x-D2WEsGcs.webp, /goit-js-finalproject-team-6/assets/tablet-1x-DFsoHRgm.webp, /goit-js-finalproject-team-6/assets/desktop-1x-D1hUaCDd.webp"
-              sizes="(min-width: 1440px) 239px, (min-width: 768px) 344px, 100vw"
-              src="./img/favorite/mobile-1x.webp"
-              alt="women walking outdoors"
-            />
-          </div>
-        </div>
-        <div class="js-hidden-text">
-          <p class="favorites-text default-text">
-            It appears that you haven't added any exercises to your favorites
-            yet. To get started, you can add exercises that you like to your
-            favorites for easier access in the future.
-          </p>
-        </div>
-        <div class="favorites-gallery">
-          <ul class="gallery-list"></ul>
-          <div
-            id="tui-pagination-container"
-            class="tui-pagination favorite-tui-pagination"
-          ></div>
-        </div>
+      <div class="container">
+        <h2 class="main-title">Favorites page</h2>
       </div>
-    </div>
-  </section>
-</main>
+    </main>
 
+    <div class="menu-backdrop">
+  <div class="menu">
+    <div class="button-wrapper">
+      <button
+        type="button"
+        class="close-btn"
+        aria-label="Close menu"
+        onclick="toggleMenu();"
+      >
+        <svg class="close-btn-icon">
+          <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#menu-close"></use>
+        </svg>
+      </button>
+    </div>
+    <ul class="nav-list">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" aria-label="Home page">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./favorites.html" aria-label="Favorites page"
+      >Favorites</a
+    >
+  </li>
+</ul>
+
+<ul class="soc-list">
+  <li class="soc-item">
+    <a
+      href="https://www.facebook.com/goITclub/"
+      class="soc-link"
+      aria-label="Facebook"
+      target="_blank"
+    >
+      <svg class="icon">
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#facebook"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="soc-item">
+    <a
+      href="https://www.instagram.com/goitclub/ "
+      class="soc-link"
+      aria-label="Instagram"
+      target="_blank"
+    >
+      <svg class="icon">
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#instagram"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="soc-item">
+    <a
+      href="https://www.youtube.com/c/GoIT"
+      class="soc-link"
+      aria-label="Youtube"
+      target="_blank"
+    >
+      <svg class="icon">
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#youtube"></use>
+      </svg>
+    </a>
+  </li>
+</ul>
+
+
+  </div>
+</div>
+
+
+
+    <script src="./js/menu.js"></script>
+    <script src="./js/nav.js"></script>
   </body>
 </html>
