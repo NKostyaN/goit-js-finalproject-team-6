@@ -11,12 +11,13 @@
       rel="stylesheet"
     />
     <script type="module" crossorigin src="/goit-js-finalproject-team-6/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/nav-CFA1oLwy.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/nav-Bgk97ca9.js">
     <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/vendor-CNNbG8jS.js">
-    <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/nav-Dtv2-PjX.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/nav-C3OPm_dR.css">
   </head>
   <body>
-    <header class="header">
+    <div class="container">
+      <header class="header">
   <div class="container">
     <a class="header-logo" href="./index.html" aria-label="Site logo">
       <svg class="logo-svg">
@@ -89,7 +90,76 @@
   </div>
 </header>
 
+      <div class="menu-backdrop">
+  <div class="menu">
+    <div class="button-wrapper">
+      <button
+        type="button"
+        class="close-btn"
+        aria-label="Close menu"
+        onclick="toggleMenu();"
+      >
+        <svg class="close-btn-icon">
+          <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+    <ul class="nav-list">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" aria-label="Home page">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./favorites.html" aria-label="Favorites page"
+      >Favorites</a
+    >
+  </li>
+</ul>
 
+<ul class="soc-list">
+  <li class="soc-item">
+    <a
+      href="https://www.facebook.com/goITclub/"
+      class="soc-link"
+      aria-label="Facebook"
+      target="_blank"
+    >
+      <svg class="icon">
+        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#facebook"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="soc-item">
+    <a
+      href="https://www.instagram.com/goitclub/ "
+      class="soc-link"
+      aria-label="Instagram"
+      target="_blank"
+    >
+      <svg class="icon">
+        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#instagram"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="soc-item">
+    <a
+      href="https://www.youtube.com/c/GoIT"
+      class="soc-link"
+      aria-label="Youtube"
+      target="_blank"
+    >
+      <svg class="icon">
+        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#youtube"></use>
+      </svg>
+    </a>
+  </li>
+</ul>
+
+
+  </div>
+</div>
+
+
+    </div>
     <main>
       <div class="container">
         <div class="exercises-row">
@@ -212,83 +282,14 @@
   <!-- End News -->
 </section>
 
-        <div class="menu-backdrop">
-  <div class="menu">
-    <div class="button-wrapper">
-      <button
-        type="button"
-        class="close-btn"
-        aria-label="Close menu"
-        onclick="toggleMenu();"
-      >
-        <svg class="close-btn-icon">
-          <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#close"></use>
-        </svg>
-      </button>
-    </div>
-    <ul class="nav-list">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html" aria-label="Home page">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./favorites.html" aria-label="Favorites page"
-      >Favorites</a
-    >
-  </li>
-</ul>
-
-<ul class="soc-list">
-  <li class="soc-item">
-    <a
-      href="https://www.facebook.com/goITclub/"
-      class="soc-link"
-      aria-label="Facebook"
-      target="_blank"
-    >
-      <svg class="icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#facebook"></use>
-      </svg>
-    </a>
-  </li>
-  <li class="soc-item">
-    <a
-      href="https://www.instagram.com/goitclub/ "
-      class="soc-link"
-      aria-label="Instagram"
-      target="_blank"
-    >
-      <svg class="icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#instagram"></use>
-      </svg>
-    </a>
-  </li>
-  <li class="soc-item">
-    <a
-      href="https://www.youtube.com/c/GoIT"
-      class="soc-link"
-      aria-label="Youtube"
-      target="_blank"
-    >
-      <svg class="icon">
-        <use href="/goit-js-finalproject-team-6/assets/sprites-Cqs1nUJ0.svg#youtube"></use>
-      </svg>
-    </a>
-  </li>
-</ul>
-
-
-  </div>
-</div>
-
-
       </div>
     </main>
-
-    <button class="button-start" data-modal-open value="64f389465ae26083f39b17a2">
+    <div class="container">
+      <button class="button-start" data-modal-open value="64f389465ae26083f39b17a2">
   <p>TMP Show Modal</p>
 </button>
 
-    <footer class="footer">
+      <footer class="footer">
   <div class="container">
     <p class="footer-desc">
       Your Energy. All rights reserved.
@@ -296,6 +297,7 @@
   </div>
 </footer>
 
+    </div>
     <div class="backdrop visually-hidden" data-modal>
   <div class="modal">
     <button class="btn-modal-close" data-modal-close>
