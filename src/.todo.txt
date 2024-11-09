@@ -1,0 +1,7 @@
+.footer-contact-item:not(:last-of-type) {
+}
+  row-gap: 20px;
+  text-align: left;
+
+
+delte footer favorites
