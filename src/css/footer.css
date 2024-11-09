@@ -1,3 +1,4 @@
+/* #region General */
 .footer .nav-list {
   display: none;
 }
@@ -8,7 +9,9 @@
 .footer {
   padding-bottom: 10px;
 }
+/* #endregion General */
 
+/* #region Container */
 .footer > .container {
   display: flex;
   flex-direction: column;
@@ -19,13 +22,14 @@
   box-shadow: 0 0 0 100vmax var(--color-black);
   clip-path: inset(0 -100vmax -100vmax);
 }
+/* #endregion Container */
 
+/* #region Content */
 .footer .footer-content {
   color: var(--color-grey);
 
   display: flex;
   flex-direction: column;
-  /* gap: 40px; */
 
   align-items: start;
   justify-content: start;
@@ -35,6 +39,7 @@
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    gap: 114px;
     justify-content: space-between;
     padding: 64px 0;
   }
@@ -45,37 +50,99 @@
   padding-bottom: 20px;
 }
 
+.footer-content-end {
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+/* #endregion Content */
+
+/* #region Socials */
 .footer .soc-list {
   padding-bottom: 40px;
+  display: flex;
   gap: 12px;
 }
+
+.footer .soc-item {
+  border: 1px solid rgba(244, 244, 244, 0.1);
+  background-color: var(--color-black);
+  transition: var(--trns);
+  transition-property: background-color;
+}
+.footer .soc-item:hover,
+.footer .soc-item:focus {
+  background-color: var(--color-grey);
+}
+
 .footer .soc-link {
   width: 24px;
   height: 24px;
+
+  @media screen and (min-width: 768px) {
+    width: 28px;
+    height: 28px;
+  }
 }
 .footer .soc-link .icon {
   width: 24px;
   height: 24px;
   fill: var(--color-grey);
+  transition: var(--trns);
+  transition-property: fill;
+
+  @media screen and (min-width: 768px) {
+    width: 28px;
+    height: 28px;
+  }
 }
 .footer .soc-item:hover .icon,
 .footer .soc-item:focus .icon {
-  fill: var(--color-grey);
+  fill: var(--color-black);
 }
+/* #endregion Socials */
 
+/* #region CTA */
 .footer-cta-text {
   font-size: 38px;
   line-height: 1.157;
   letter-spacing: -0.02em;
   padding-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 56px;
+    line-height: 1.071;
+    letter-spacing: 0.04em;
+  }
+  @media screen and (min-width: 1200px) {
+    letter-spacing: -0.02em;
+  }
+}
+/* #endregion CTA */
+
+/* #region Subscription */
+.footer .subscription {
+  width: 100%;
+
+  @media screen and (min-width: 1200px) {
+    width: 354px;
+  }
 }
 
 .footer-subscribe-text {
   font-size: 14px;
   line-height: 1.285;
   padding-bottom: 20px;
-}
 
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+/* #endregion Subscription */
+
+/* #region Form */
 .footer-form input {
   width: 100%;
   padding: 12px 14px;
@@ -84,12 +151,27 @@
   border-radius: 30px;
   border: 1px solid var(--color-grey);
   background-color: var(--color-black);
+
+  color: rgba(244, 244, 244, 0.6);
+  font-size: 14px;
+  line-height: 1.285;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+    width: 352px;
+  }
 }
 
 .footer-form input::placeholder {
   color: rgba(244, 244, 244, 0.6);
   font-size: 14px;
   line-height: 1.285;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .footer-form button {
@@ -101,21 +183,40 @@
   background-color: var(--color-grey);
   font-size: 14px;
   line-height: 1.285;
-}
 
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+    width: 352px;
+  }
+}
+/* #endregion Form */
+
+/* #region Note */
 .footer-note {
   color: #c6cdd1;
   font-size: 14px;
   line-height: 1.285;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
   opacity: 0.9;
   display: flex;
   flex-direction: raw;
   row-gap: 10px;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    justify-content: start;
+  }
 }
-.footer-note-copyright {
-  /* flex-shrink: 1; */
-  /* width: 100%; */
+.footer-note-copyright:first-child {
+  padding-right: 78px;
 }
+.footer-note-year {
+  margin-left: auto;
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 308px;
+  }
+}
+/* #endregion Note */

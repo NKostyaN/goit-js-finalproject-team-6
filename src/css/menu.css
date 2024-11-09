@@ -1,4 +1,4 @@
-/* #region Main */
+/* #region General */
 body:has(.menu.is-open) {
   overflow: hidden;
 }
@@ -78,7 +78,7 @@ body:has(.menu.is-open) {
   transform: translateX(0);
   transition: transform var(--animation), opacity var(--animation);
 }
-/* #endregion Main */
+/* #endregion General */
 
 /* #region Navigation */
 .menu > .nav-list {
@@ -120,13 +120,13 @@ body:has(.menu.is-open) {
 .menu > .soc-list {
   margin: 0;
   padding: 0;
-
   display: flex;
   gap: 12px;
 }
 
 .menu .soc-item {
-  border: 1px solid 1px var(--color-grey);
+  border: 1px solid rgba(244, 244, 244, 0.1);
+  background-color: var(--color-black);
   transition: var(--trns);
   transition-property: background-color;
 }
@@ -135,13 +135,19 @@ body:has(.menu.is-open) {
   background-color: var(--color-grey);
 }
 
+.menu .soc-link {
+  width: 28px;
+  height: 28px;
+}
 .menu .soc-link .icon {
+  width: 28px;
+  height: 28px;
   fill: var(--color-grey);
   transition: var(--trns);
   transition-property: fill;
 }
-.menu .soc-link:hover .icon,
-.menu .soc-link:focus .icon {
+.menu .soc-item:hover .icon,
+.menu .soc-item:focus .icon {
   fill: var(--color-black);
 }
 /* #endregion Socials */
