@@ -26,7 +26,7 @@
 
 /* #region Content */
 .footer .footer-content {
-  color: var(--color-grey);
+  color: var(--color-white);
 
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@
 }
 
 .footer-content-end {
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1440px) {
     display: flex;
     justify-content: space-between;
   }
@@ -66,14 +66,14 @@
 }
 
 .footer .soc-item {
-  border: 1px solid rgba(244, 244, 244, 0.1);
+  border: 1px solid var(--color-rating);
   background-color: var(--color-black);
   transition: var(--trns);
   transition-property: background-color;
 }
 .footer .soc-item:hover,
 .footer .soc-item:focus {
-  background-color: var(--color-grey);
+  background-color: var(--color-white);
 }
 
 .footer .soc-link {
@@ -88,7 +88,7 @@
 .footer .soc-link .icon {
   width: 24px;
   height: 24px;
-  fill: var(--color-grey);
+  fill: var(--color-white);
   transition: var(--trns);
   transition-property: fill;
 
@@ -113,9 +113,9 @@
   @media screen and (min-width: 768px) {
     font-size: 56px;
     line-height: 1.071;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1440px) {
     letter-spacing: -0.02em;
   }
 }
@@ -125,7 +125,7 @@
 .footer .subscription {
   width: 100%;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1440px) {
     width: 354px;
   }
 }
@@ -149,10 +149,10 @@
   margin-bottom: 20px;
   align-items: center;
   border-radius: 30px;
-  border: 1px solid var(--color-grey);
+  border: 1px solid var(--color-white);
   background-color: var(--color-black);
 
-  color: rgba(244, 244, 244, 0.6);
+  color: var(--color-text-secondary);
   font-size: 14px;
   line-height: 1.285;
 
@@ -164,7 +164,7 @@
 }
 
 .footer-form input::placeholder {
-  color: rgba(244, 244, 244, 0.6);
+  color: var(--color-text-secondary);
   font-size: 14px;
   line-height: 1.285;
 
@@ -180,7 +180,7 @@
   justify-content: center;
   align-items: center;
   color: var(--color-black);
-  background-color: var(--color-grey);
+  background-color: var(--color-white);
   font-size: 14px;
   line-height: 1.285;
 
@@ -189,6 +189,11 @@
     line-height: 24px;
     width: 352px;
   }
+}
+
+.footer-form button:hover {
+  color: var(--color-white);
+  background-color: var(--color-black);
 }
 /* #endregion Form */
 
@@ -215,7 +220,7 @@
 .footer-note-year {
   margin-left: auto;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1440px) {
     margin-right: 308px;
   }
 }
