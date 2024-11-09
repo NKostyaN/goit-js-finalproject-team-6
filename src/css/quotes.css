@@ -1,17 +1,21 @@
-/* Загальні стилі */
+@import url(./base.css);
 
+/* Загальні стилі */
 .quotes .container {
   align-items: flex-start;
-  background-color: #242424;
+  background: var(--primary-color);
   border-radius: 20px;
   padding: 40px;
   max-width: 444px;
   margin: 0 auto;
   margin-top: 16px;
 }
-
+.quote-news.container {
+  background-color: #fff;
+}
 /* Стиль для блоку з цитатою */
-.quote-of-day {
+.quote-of-day,
+.quote-news {
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -24,17 +28,26 @@
 .quote-icon-wrapper {
   width: 34px;
   height: 32px;
-  background: rgba(244, 244, 244, 0.2);
+  background: var(--rating-color);
   display: flex;
   align-items: center;
   justify-content: center;
+  /* margin: 0 auto; */
+  padding: 0 4px;
+
   border-radius: 50%;
+}
+.quote-news > .quote-icon-wrapper {
+  background-color: var(--primary-color);
+  padding: 0 4px;
+  width: 34px;
+  height: 32px;
 }
 
 .quote-icon {
   width: 20px;
   height: 20px;
-  fill: #f4f4f4;
+  fill: var(--white-color);
 }
 
 .quote-wraper {
@@ -58,7 +71,7 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
-  color: #f4f4f4;
+  color: var(--white-color);
 }
 
 /* Текст цитати */
@@ -73,7 +86,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  color: rgba(244, 244, 244, 0.6);
+  color: var(--text-secondary-color);
   width: 314px;
   height: auto;
 }
@@ -83,10 +96,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #f4f4f4;
-  /* position: absolute;
-  top: 178px;
-  left: 90px; */
+  color: var(--white-color);
 }
 
 /* Стилі для секції з картинкою */
@@ -104,18 +114,9 @@
   border-radius: 20px;
   overflow: hidden;
   margin: 0 auto;
-  /* width: 100%; */
-  /* height: auto; */
 }
 
 /* Блок новин */
-.quote-news .container {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  width: 100%;
-  background-color: #f4f4f4;
-}
 
 .quote-news-wraper {
   display: flex;
@@ -141,7 +142,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: rgba(244, 244, 244, 0.6);
+  color: rgba(36, 36, 36, 0.6);
 }
 
 .quote-news-text {
@@ -149,5 +150,4 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  /* color: rgba(244, 244, 244, 0.6); */
 }
