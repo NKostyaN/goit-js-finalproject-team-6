@@ -1,5 +1,7 @@
 /* Styles for Mobile devices */
 .container {
+  display: flex;
+  flex-direction: row;
   min-width: 320px;
   max-width: 375px;
   width: 100%;

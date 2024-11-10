@@ -1,25 +1,17 @@
-<section class="quotes container">
+<div class="quotes container">
   <!-- Quote -->
   <div class="quote-of-day container">
-    <div class="quote-icon-wrapper" width="32" height="32">
+    <div class="quote-icon-wrapper">
       <svg class="quote-icon">
-        <!-- Icon Runner -->
-        <use
-          href="../img/icons/sprites.svg#running-man"
-          width="20"
-          height="20"
-        ></use>
+        <use href="../img/icons/sprites.svg#running-man"></use>
       </svg>
     </div>
     <div class="quote-wraper">
       <div class="quote-header">
         <h2 class="quote-title">Quote of the Day</h2>
-        <!-- <div class="quote-icon-wrapper"> -->
-        <svg class="quote-icon" width="24" height="24">
-          <!-- Icon Commas -->
+        <svg class="quote-icon">
           <use href="../img/icons/sprites.svg#quotes"></use>
         </svg>
-        <!-- </div> -->
       </div>
       <div class="quote">
         <p class="quote-text">
@@ -33,25 +25,22 @@
   </div>
   <!-- End Quote -->
 
-  <div class="quote-image">
-    <!-- Picture -->
+  <div class="quote-image container">
     <picture class="quote-image-img">
-      <!-- Desktop -->
+      <!-- Mobile -->
       <source
-        media="(min-width: 1200px)"
         srcset="
-          ../img/quote/desktop-1x.webp 1x,
-          ../img/quote/desktop-2x.webp 2x,
-          ../img/quote/desktop-3x.webp 3x
+          ../img/quote/mobile-1x.webp 1x,
+          ../img/quote/mobile-2x.webp 2x,
+          ../img/quote/mobile-3x.webp 3x
         "
         type="image/webp"
       />
       <source
-        media="(min-width: 1200px)"
         srcset="
-          ../img/quote/desktop-1x.png 1x,
-          ../img/quote/desktop-2x.png 2x,
-          ../img/quote/desktop-3x.png 3x
+          ../img/quote/mobile-1x.png 1x,
+          ../img/quote/mobile-2x.png 2x,
+          ../img/quote/mobile-3x.png 3x
         "
       />
       <!-- Tablet -->
@@ -72,22 +61,22 @@
           ../img/quote/tablet-3x.png 3x
         "
       />
-      <!-- Mobile -->
+      <!-- Desktop -->
       <source
-        media="(max-width: 767px)"
+        media="(min-width: 1200px)"
         srcset="
-          ../img/quote/mobile-1x.webp 1x,
-          ../img/quote/mobile-2x.webp 2x,
-          ../img/quote/mobile-3x.webp 3x
+          ../img/quote/desktop-1x.webp 1x,
+          ../img/quote/desktop-2x.webp 2x,
+          ../img/quote/desktop-3x.webp 3x
         "
         type="image/webp"
       />
       <source
-        media="(max-width: 767px)"
+        media="(min-width: 1200px)"
         srcset="
-          ../img/quote/mobile-1x.png 1x,
-          ../img/quote/mobile-2x.png 2x,
-          ../img/quote/mobile-3x.png 3x
+          ../img/quote/desktop-1x.png 1x,
+          ../img/quote/desktop-2x.png 2x,
+          ../img/quote/desktop-3x.png 3x
         "
       />
       <img
@@ -96,13 +85,12 @@
         loading="lazy"
       />
     </picture>
-    <!-- End Picture -->
   </div>
+
   <!-- News -->
   <div class="quote-news container">
     <div class="quote-icon-wrapper">
       <svg class="quote-icon">
-        <!-- Icon Gantel -->
         <use href="../img/icons/sprites.svg#dumbbell"></use>
       </svg>
     </div>
@@ -115,12 +103,8 @@
         The World Health Organization recommends at least 150 minutes of
         moderate-intensity aerobic physical activity throughout the week for
         adults aged 18-64. However, what happens if we adjust that number to 110
-        minutes every day? While it might seem like a high number to hit,
-        dedicating 110 minutes daily to sporting activities may offer
-        unparalleled benefits to physical health, mental well-being, and overall
-        quality of life.
+        minutes every day?
       </p>
     </div>
   </div>
-  <!-- End News -->
-</section>
+</div>
