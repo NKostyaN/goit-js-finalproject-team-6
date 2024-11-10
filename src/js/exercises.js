@@ -53,26 +53,21 @@ export function renderExercises(exercises) {
       </div>
     `;
 
-
     exerciseElement.addEventListener('click', async () => {
       const dataFilter = exercise.filter;
       const dataName = exercise.name;
 
-
       const data = await fetchExerciseDetailsPage(dataFilter, dataName, 1);
       renderExerciseDetailsPage(data.results);
-  });
-
+    });
 
     container.appendChild(exerciseElement);
   });
 }
 
-
-
 function renderExerciseDetailsPage(exercises) {
   const container = document.getElementById('exercises-container');
-  container.innerHTML = ''; 
+  container.innerHTML = '';
 
   exercises.forEach(exerciseDetail => {
     const exerciseElement = document.createElement('li');
@@ -81,66 +76,37 @@ function renderExerciseDetailsPage(exercises) {
       <div class="exercise-details__item">
         <div class="exercise-header">
           <button type="button" class='btn-workout'>WORKOUT</button>
-          <div class="exercise-rating">${exerciseDetail.rating || 'Немає даних'} <span>⭐</span></div>
+          <div class="exercise-rating">${
+            exerciseDetail.rating || 'Немає даних'
+          } <span>⭐</span></div>
           <button type="button" class="btn-start">Start ➔</button>
         </div>
         <h3 class="exercise-name">${exerciseDetail.name}</h3>
         <div class="exercise-info">
-          <p class="truncate-text"<strong class="exercise-info-title">Burned calories:</strong> ${exerciseDetail.burnedCalories}</p>
-          <p class="truncate-text"><strong class="exercise-info-title">Body part:</strong> ${exerciseDetail.bodyPart}</p>
-          <p class="truncate-text"><strong class="exercise-info-title">Target:</strong> ${exerciseDetail.target}</p>
+          <p class="truncate-text"<strong class="exercise-info-title">Burned calories:</strong> ${
+            exerciseDetail.burnedCalories
+          }</p>
+          <p class="truncate-text"><strong class="exercise-info-title">Body part:</strong> ${
+            exerciseDetail.bodyPart
+          }</p>
+          <p class="truncate-text"><strong class="exercise-info-title">Target:</strong> ${
+            exerciseDetail.target
+          }</p>
         </div>
       </div>
     `;
     container.appendChild(exerciseElement);
-});
-
+  });
 }
-
-
-function createExercisePagination(totalPages, filter, name) {
-  const paginationContainer = document.querySelector('.exercises-pagination ul');
-  paginationContainer.innerHTML = ''; 
-
-  for (let i = 1; i <= totalPages; i++) {
-    const pageItem = document.createElement('li');
-    pageItem.textContent = i;
-
-
-    if (i === 1) {
-      pageItem.classList.add('exercises-pagination__current');
-    }
-
-
-    pageItem.addEventListener('click', async () => {
-
-      document.querySelectorAll('.exercises-pagination li').forEach(li => {
-        li.classList.remove('exercises-pagination__current');
-      });
-      pageItem.classList.add('exercises-pagination__current');
-
-
-      const data = await fetchExerciseDetailsPage(filter, name, i);
-      renderExerciseDetailsPage(data.results);
-    });
-
-    paginationContainer.appendChild(pageItem);
-  }
-}
-
 
 async function fetchExerciseDetailsPage(filter, name, page = 1) {
-
   let filterCamelCase = filter.toLowerCase().replace(/\s+/g, '');
 
-
   if (filterCamelCase.endsWith('ts')) {
-    filterCamelCase = filterCamelCase.slice(0, -1); 
+    filterCamelCase = filterCamelCase.slice(0, -1);
   }
 
-
   const encodedName = encodeURIComponent(name);
-
 
   const url = `https://your-energy.b.goit.study/api/exercises?${filterCamelCase}=${encodedName}&page=${page}&limit=10`;
 
@@ -158,9 +124,8 @@ async function fetchExerciseDetailsPage(filter, name, page = 1) {
   }
 }
 
-
 export function initializeFilters() {
-  const filterItems = document.querySelectorAll('.exercises-filters ul li');
+  const filterItems = document.querySelectorAll('.exercises-filters li');
   filterItems.forEach(item => {
     item.addEventListener('click', () => {
       const selectedFilter = item.id;
