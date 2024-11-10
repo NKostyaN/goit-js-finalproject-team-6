@@ -9,7 +9,7 @@ var C=t=>{throw TypeError(t)};var T=(t,e,n)=>e.has(t)||C("Cannot "+n);var L=(t,e
         </linearGradient>
       </defs>
       <use href="${F}#star" fill="url(#${r})"></use>
-    `,n.push(s)}return n}X();document.getElementById("subscriptionForm").addEventListener("submit",async function(t){t.preventDefault();const e=t.target.email,n=e.value;if(!e.checkValidity()){alert("Please enter a valid email address.");return}try{const a=await x.post("https://your-energy.b.goit.study/api/subscription",{email:n});a.status===201&&(alert(a.data.message),e.value="")}catch(a){a.response?a.response.status===400?alert("Bad request: invalid request body."):a.response.status===404?alert("Not found: The endpoint could not be found."):a.response.status===409?alert("Subscription already exists."):a.response.status===500&&alert("Server error: please try again later."):alert("An unexpected error occurred. Please try again.")}});async function B(t="Muscles",e=1,n=12){try{const a=t.replace(/%20/g," "),i=await x.get("https://your-energy.b.goit.study/api/filters",{params:{filter:a,page:e,limit:n}}),s=i.data.results,r=i.data.totalPages;Z(s),nt(r,t,n,e)}catch(a){console.error("Помилка при завантаженні даних:",a)}}function Z(t){const e=document.getElementById("exercises-container");e.innerHTML="",t.forEach(n=>{const a=document.createElement("div");a.classList.add("exercises__col"),a.innerHTML=`
+    `,n.push(s)}return n}document.getElementById("subscriptionForm").addEventListener("submit",async function(t){t.preventDefault();const e=t.target.email,n=e.value;if(!e.checkValidity()){alert("Please enter a valid email address.");return}try{const a=await x.post("https://your-energy.b.goit.study/api/subscription",{email:n});a.status===201&&(alert(a.data.message),e.value="")}catch(a){a.response?a.response.status===400?alert("Bad request: invalid request body."):a.response.status===404?alert("Not found: The endpoint could not be found."):a.response.status===409?alert("Subscription already exists."):a.response.status===500&&alert("Server error: please try again later."):alert("An unexpected error occurred. Please try again.")}});async function B(t="Muscles",e=1,n=12){try{const a=t.replace(/%20/g," "),i=await x.get("https://your-energy.b.goit.study/api/filters",{params:{filter:a,page:e,limit:n}}),s=i.data.results,r=i.data.totalPages;Z(s),nt(r,t,n,e)}catch(a){console.error("Помилка при завантаженні даних:",a)}}function Z(t){const e=document.getElementById("exercises-container");e.innerHTML="",t.forEach(n=>{const a=document.createElement("div");a.classList.add("exercises__col"),a.innerHTML=`
       <div class="exercises__item">
         <img src="${n.imgURL}" alt="Опис зображення" />
         <div class="text-overlay">
@@ -17,12 +17,12 @@ var C=t=>{throw TypeError(t)};var T=(t,e,n)=>e.has(t)||C("Cannot "+n);var L=(t,e
           <p>${n.filter}</p>
         </div>
       </div>
-    `,a.addEventListener("click",async()=>{const i=n.filter,s=n.name,r=await tt(i,s,1);D(r.results)}),e.appendChild(a)})}function D(t){const e=document.getElementById("exercises-container");e.innerHTML="",t.forEach(n=>{const a=document.createElement("li");a.classList.add("exercise-item"),a.innerHTML=`
+    `,a.addEventListener("click",async()=>{const i=n.filter,s=n.name,r=await tt(i,s,1);D(r.results),X()}),e.appendChild(a)})}function D(t){const e=document.getElementById("exercises-container");e.innerHTML="",t.forEach(n=>{const a=document.createElement("li");a.classList.add("exercise-item"),a.innerHTML=`
       <div class="exercise-details__item">
         <div class="exercise-header">
           <button type="button" class='btn-workout'>WORKOUT</button>
           <div class="exercise-rating">${n.rating||"Немає даних"} <span>⭐</span></div>
-          <button type="button" class="btn-start">Start ➔</button>
+          <button type="button" class="btn-start" data-modal-open value="${n._id}">Start ➔</button>
         </div>
         <h3 class="exercise-name">${n.name}</h3>
         <div class="exercise-info">
