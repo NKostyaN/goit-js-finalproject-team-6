@@ -12,13 +12,8 @@
     <section class="HeroSection">
       <div class="HeroContent">
         <div class="decorative-icon">
-          <!-- SVG код для декоративного елемента -->
-          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" stroke="#242424" stroke-width="2"/>
-            <line x1="12" y1="2" x2="12" y2="22" stroke="#242424" stroke-width="2"/>
-            <line x1="2" y1="12" x2="22" y2="12" stroke="#242424" stroke-width="2"/>
-            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" stroke="#242424" stroke-width="2"/>
-            <line x1="4.93" y1="19.07" x2="19.07" y2="4.93" stroke="#242424" stroke-width="2"/>
+          <svg width="38" height="38">
+            <use href="src/img/icons/sprites.svg#icon-star"></use>
           </svg>
         </div>
         <h1 class="hero-title">Get <span>Body</span> in shape, Stay healthy</h1>
@@ -34,13 +29,13 @@
       <!-- Вибір зображення для різних екранів -->
       <div class="HeroImage">
         <picture>
-          <source media="(min-width: 1024px)" srcset="src/img/desktop-1x.webp 1x, src/img/desktop-2x.webp 2x, src/img/desktop-3x.webp 3x" type="image/webp">
-          <source media="(min-width: 1024px)" srcset="src/img/desktop-1x.jpg 1x, src/img/desktop-2x.jpg 2x, src/img/desktop-3x.jpg 3x" type="image/jpeg">
-          <source media="(min-width: 768px)" srcset="src/img/tablet-1x.webp 1x, src/img/tablet-2x.webp 2x, src/img/tablet-3x.webp 3x" type="image/webp">
-          <source media="(min-width: 768px)" srcset="src/img/tablet-1x.jpg 1x, src/img/tablet-2x.jpg 2x, src/img/tablet-3x.jpg 3x" type="image/jpeg">
-          <source srcset="src/img/mobile-1x.webp 1x, src/img/mobile-2x.webp 2x, src/img/mobile-3x.webp 3x" type="image/webp">
-          <source srcset="src/img/mobile-1x.jpg 1x, src/img/mobile-2x.jpg 2x, src/img/mobile-3x.jpg 3x" type="image/jpeg">
-          <img src="src/img/desktop-1x.jpg" alt="Two people high-fiving during a workout">
+          <source media="(min-width: 1024px)" srcset="src/img/hero/desktop-1x.webp 1x, src/img/hero/desktop-2x.webp 2x, src/img/hero/desktop-3x.webp 3x" type="image/webp">
+          <source media="(min-width: 1024px)" srcset="src/img/hero/desktop-1x.jpg 1x, src/img/hero/desktop-2x.jpg 2x, src/img/hero/desktop-3x.jpg 3x" type="image/jpeg">
+          <source media="(min-width: 768px)" srcset="src/img/hero/tablet-1x.webp 1x, src/img/hero/tablet-2x.webp 2x, src/img/hero/tablet-3x.webp 3x" type="image/webp">
+          <source media="(min-width: 768px)" srcset="src/img/hero/tablet-1x.jpg 1x, src/img/hero/tablet-2x.jpg 2x, src/img/hero/tablet-3x.jpg 3x" type="image/jpeg">
+          <source srcset="src/img/hero/mobile-1x.webp 1x, src/img/hero/mobile-2x.webp 2x, src/img/hero/mobile-3x.webp 3x" type="image/webp">
+          <source srcset="src/img/hero/mobile-1x.jpg 1x, src/img/hero/mobile-2x.jpg 2x, src/img/hero/mobile-3x.jpg 3x" type="image/jpeg">
+          <img src="src/img/hero/desktop-1x.jpg" alt="Two people high-fiving during a workout">
         </picture>
       </div>
     </section>
