@@ -52,6 +52,10 @@
   margin-top: 20px;
 }
 
+.w-full{
+  width: 100%;
+}
+
 @media (min-width: 1440px) {
   .exercises-filters{
     margin-top: 0;
@@ -180,6 +184,10 @@
   .exercises-col-xl-auto{
     flex: 0 0 auto;
     width: auto;
+  }
+
+  .exercises-col-xl{
+    flex: 1 0 0%;
   }
 }
 /********************** End of Exercises section **********************/

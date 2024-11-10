@@ -1,4 +1,4 @@
-.quotes .container {
+.quotes > *{
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -8,19 +8,19 @@
   margin: 0 auto;
 }
 
-.quote-news.container {
+.quote-news {
   background-color: #fff;
 }
 
-.quote-of-day.container,
-.quote-image.container,
-.quote-news.container {
+.quote-of-day,
+.quote-image,
+.quote-news {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   width: 100%;
 }
-.quote-image.container {
+.quote-image {
   background: none;
   padding: 0;
 }
