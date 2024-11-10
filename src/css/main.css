@@ -42,7 +42,8 @@
 .exercises-filters{
   display: flex;
   color: #24242499;
-  margin-top: 32px;
+  margin-top: 20px;
+  align-items: center;
 }
 
 .exercises-filters li{
@@ -81,9 +82,59 @@
   margin-top: 20px;
 }
 
+.search-container{
+  margin-top: 40px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--color-black);
+  padding: 12px;
+  border-radius: 30px;
+}
+
+.search-container input{
+  background-color: transparent;
+  border: none;
+  font-size: 0.875rem;
+  color: var(--color-black);
+  width: calc(100% - 24px);
+  height: 20px;
+}
+
+.search-container input:focus{
+  border: none;
+  outline: none;
+}
+
+.search-container input::placeholder{
+  color: var(--color-black);
+}
+
+.search-button{
+  background-color: transparent;
+  background-image: url('../img/icons/search.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .search-container{
+    width: 273px;
+    margin-top: 32px;
+  }
+}
+
 @media (min-width: 1440px) {
   .exercises-filters{
     margin-top: 0;
+  }
+
+  .search-container{
+    margin-top: 0;
+    margin-inline-end: 32px;
   }
 }
 /********************** End of Breadcrumbs and Filters section **********************/
@@ -190,10 +241,6 @@
   margin-inline: -0.5rem;
 }
 
-.exercises-row--jsb{
-  justify-content: space-between;
-}
-
 .exercises-row > * {
   flex-shrink: 0;
   width: 100%;
@@ -201,11 +248,19 @@
   padding-inline: 0.5rem;
 }
 
+.justify-space-between{
+  justify-content: space-between;
+}
+
 .w-full{
   width: 100%;
 }
 
 @media (min-width: 768px) {
+  .d-md-flex{
+    display: flex;
+  }
+
   .exercises-md-col-4{
     flex: 0 0 auto;
     width: 33.33333333%;
@@ -224,6 +279,15 @@
   .exercises-md-col-7{
     flex: 0 0 auto;
     width: 58.33333333%;
+  }
+
+  .exercises-md-col-12{
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .w-md-full{
+    width: 100%;
   }
 }
 

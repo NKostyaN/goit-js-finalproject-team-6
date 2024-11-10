@@ -96,6 +96,9 @@ export function handleExerciseClick(exerciseElement) {
 }
 
 function renderExerciseDetailsPage(exercises) {
+  const searchContainer = document.getElementById('search-container');
+  searchContainer.style.display = 'flex';
+
   const container = document.getElementById('exercises-container');
   container.innerHTML = '';
 
@@ -167,6 +170,9 @@ export function initializeFilters() {
   const filterItems = document.querySelectorAll('.exercises-filters li');
   filterItems.forEach(item => {
     item.addEventListener('click', () => {
+      const searchContainer = document.getElementById('search-container');
+      searchContainer.style.display = 'none';
+
       const selectedFilter = item.id;
 
       // Clean container and using new filter
