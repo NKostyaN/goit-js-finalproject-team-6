@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { initModalListeners } from './modal';
 
 // Loading data from API
 export async function loadExercises(filter = 'Muscles', page = 1, limit = 12) {
@@ -59,6 +60,7 @@ export function renderExercises(exercises) {
 
       const data = await fetchExerciseDetailsPage(dataFilter, dataName, 1);
       renderExerciseDetailsPage(data.results);
+      initModalListeners();
     });
 
     container.appendChild(exerciseElement);
@@ -79,7 +81,9 @@ function renderExerciseDetailsPage(exercises) {
           <div class="exercise-rating">${
             exerciseDetail.rating || 'Немає даних'
           } <span>⭐</span></div>
-          <button type="button" class="btn-start">Start ➔</button>
+          <button type="button" class="btn-start" data-modal-open value="${
+            exerciseDetail._id
+          }">Start ➔</button>
         </div>
         <h3 class="exercise-name">${exerciseDetail.name}</h3>
         <div class="exercise-info">

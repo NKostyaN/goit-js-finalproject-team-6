@@ -306,5 +306,3 @@ function addStars(starsCount, rating) {
 
   return elements;
 }
-
-initModalListeners();
