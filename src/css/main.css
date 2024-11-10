@@ -52,10 +52,6 @@
   margin-top: 20px;
 }
 
-.w-full{
-  width: 100%;
-}
-
 @media (min-width: 1440px) {
   .exercises-filters{
     margin-top: 0;
@@ -66,29 +62,6 @@
 /********************** Exercises section **********************/
 .exercises{
   gap: 32px 0;
-}
-
-.exercises-row{
-  display: flex;
-  flex-wrap: wrap;
-  margin-inline: -0.5rem;
-}
-
-.exercises-row--jsb-ca{
-  justify-content: space-between;
-  align-items: center;
-}
-
-.exercises-row > * {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-inline: 0.5rem;
-}
-
-.exercises__col{
-  flex: 0 0 auto;
-  width: 100%;
 }
 
 .exercises__item{
@@ -166,10 +139,6 @@
 }
 
 @media (min-width: 768px) {
-  .exercises__col{
-    width: 33.33333333%;
-  }
-
   .exercises__item .text-overlay h5 {
     font-size: 1.5rem;
     line-height: 1.5rem;
@@ -179,6 +148,46 @@
 @media (min-width: 1440px) {
   .exercises-filters{
     justify-content: flex-end;
+  }
+}
+/********************** End of Exercises section **********************/
+
+/********************** Common classes **********************/
+.exercises-row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: -0.5rem;
+}
+
+.exercises-row--jsb{
+  justify-content: space-between;
+}
+
+.exercises-row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-inline: 0.5rem;
+}
+
+.exercises__col{
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.w-full{
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .exercises__col{
+    width: 33.33333333%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .order-xl-1{
+    order: 1;
   }
 
   .exercises-col-xl-auto{
@@ -190,7 +199,7 @@
     flex: 1 0 0%;
   }
 }
-/********************** End of Exercises section **********************/
+/********************** End of Common classes **********************/
 
 .exercise-item {
 
