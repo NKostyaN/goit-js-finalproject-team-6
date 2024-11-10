@@ -2,7 +2,7 @@ import icons from '../img/icons/sprites.svg';
 import axios from "axios";
 import { getFavorites, removeFromFavorites } from "./storage";
 import { api } from './api';
-// import { handleModalOpen2 } from './modal.js';
+import { initModalListeners } from './modal';
 
 
 
@@ -119,34 +119,12 @@ function renderExercises(exercises) {
  
 }
 
-let perPage = 7
 window.addEventListener("resize", renderCards)
 function renderCards() {
   let exercises = getFavorites();
   
+  renderExercises(exercises)
 
-  if (window.innerWidth >= 768) {
-    
-    perPage = 10; 
-  
-  }
-
-  if (window.innerWidth >= 1440) {
-   
-    perPage = 6; 
-  
-  }
-
-  renderExercises(exercises.slice(0, perPage))
-
-  makePaginationByItems(perPage, exercises.length).on(
-    'afterMove',
-    ({ page }) => {
-        let start = (page-1)*perPage
-      let end = page * perPage;
-      
-  renderExercises(exercises.slice(start, end))
-    });
 }
 
 renderCards(); 
@@ -170,7 +148,7 @@ async function handleCardClick(event) {
 
 function removeCard(event) {
   const id = event.currentTarget.dataset.id; 
-  removeFromFavorites(id, );
+  removeFromFavorites(id);
   renderCards();  
 }
 

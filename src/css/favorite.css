@@ -407,3 +407,19 @@
   justify-content: space-between;
   margin-top: 16px;
 }
+
+.favorites-gallery {
+  width: 100%;           
+  height: 500px;          
+  overflow-y: auto;       
+  overflow-y: scroll;     
+  overflow-x: hidden;     
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.gallery-list {
+  list-style-type: none; 
+  padding: 0;
+  margin: 0;
+}
