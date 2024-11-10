@@ -1,3 +1,19 @@
+.main-container{
+  margin-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .main-container{
+    margin-bottom: 100px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main-container{
+    margin-bottom: 132px;
+  }
+}
+
 /********************** Breadcrumbs and Filters section **********************/
 .breadcrumbs{
   display: inline-flex;
@@ -68,6 +84,7 @@
   position: relative;
   border-radius: 24px;
   overflow: hidden;
+  max-height: 216px;
 }
 
 .exercises__item picture,
@@ -185,6 +202,11 @@
     width: 41.66666667%;
   }
 
+  .exercises-md-col-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+
   .exercises-md-col-7{
     flex: 0 0 auto;
     width: 58.33333333%;
@@ -217,16 +239,10 @@
 /********************** End of Common classes **********************/
 
 .exercise-item {
-
-  width: 345px;
-  height: 141px;
   list-style: none;
-  margin-bottom: 20px;
   padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 15px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .exercise-details__item {
@@ -278,22 +294,21 @@
 
 .exercise-info{
   display: flex;
-  flex-direction: row;
-  gap:  10px;
+  gap: 0 10px;
+  flex-wrap: wrap;
 }
+
 .exercise-info p {
   margin: 2px 0;
   font-size: 0.9rem;
-  font-family: DM Sans;
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-
-
 }
+
 .exercise-info-title{
   font-size: 12px;
   line-height: 18px;
