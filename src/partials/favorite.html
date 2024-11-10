@@ -1,0 +1,73 @@
+<main>
+  <section class="favorites">
+    <!-- <div class="favorites-container"> -->
+    <h1 class="favorites-tittle">Favorites</h1>
+
+    <div class="favorites-thumb">
+      <div class="quote-conteiner">
+        <div class="favorites-quote">
+          <svg class="man-svg" width="34" height="32">
+            <use href="./img/icons/sprites.svg#icon-icon"></use>
+          </svg>
+
+          <div class="quote-content">
+            <svg class="commas-svg" width="20" height="20">
+              <use href="./img/icons/sprites.svg#icon-inverted-commas"></use>
+            </svg>
+
+            <h2 class="quote-tittle">Quote of the day</h2>
+
+            <p class="quote-text">
+              A lot of times I find that people who are blessed with the most
+              talent don't ever develop that attitude, and the ones who aren't
+              blessed in that way are the most competitive and have the biggest
+              heart.
+            </p>
+            <p class="quote-author"></p>
+          </div>
+        </div>
+
+        <div class="features-container">
+          <div class="features">
+            <div class="features-content">
+              <svg width="20" height="20">
+                <use href="./img/icons/sprites.svg#icon-dumbbell-black"></use>
+              </svg>
+              <div class="text-pozition">
+                <p class="features-tittle">110 min</p>
+                <p class="favorites-text">Daily norm of sports</p>
+              </div>
+            </div>
+          </div>
+
+          <img
+            class="favorites-img"
+            srcset="
+              ./img/favorites/mobile-1x.webp,
+              ./img/favorites/tablet-1x.webp,
+              ./img/favorites/desktop-1x.webp
+            "
+            sizes="(min-width: 1440px) 239px, (min-width: 768px) 344px, 100vw"
+            src="./img/favorite/mobile-1x.webp"
+            alt="women walking outdoors"
+          />
+        </div>
+      </div>
+      <div class="js-hidden-text">
+        <p class="favorites-text default-text">
+          It appears that you haven't added any exercises to your favorites yet.
+          To get started, you can add exercises that you like to your favorites
+          for easier access in the future.
+        </p>
+      </div>
+      <div class="favorites-gallery">
+        <ul class="gallery-list"></ul>
+        <div
+          id="tui-pagination-container"
+          class="tui-pagination favorite-tui-pagination"
+        ></div>
+      </div>
+    </div>
+    <!-- </div> -->
+  </section>
+</main>

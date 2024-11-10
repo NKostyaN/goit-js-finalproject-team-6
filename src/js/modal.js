@@ -1,5 +1,6 @@
 import iconsPath from '../img/icons/sprites.svg';
 import { api } from './api';
+import { getFavorites, addToFavorites, removeFromFavorites } from './storage';
 
 const SELECTORS = {
   closeModalButton: '[data-modal-close]',
@@ -47,7 +48,7 @@ async function loadModalData(exerciseId) {
 
   modalContainer.classList.toggle(CLASS_NAMES.visuallyHidden);
   handleModalOpen();
-  initRatingForm();
+  initRatingForm(exerciseId);
 }
 
 function clearModalContent() {
@@ -155,18 +156,24 @@ function closeModal() {
 
 closeModalButton.addEventListener('click', closeModal);
 modalContainer.addEventListener('click', event => {
-  const rect = exerciseModal.getBoundingClientRect();
   const isInModal =
-    rect.top <= event.clientY &&
-    event.clientY <= rect.top + rect.height &&
-    rect.left <= event.clientX &&
-    event.clientX <= rect.left + rect.width;
+    checkTapInRect(event, exerciseModal.getBoundingClientRect()) ||
+    checkTapInRect(event, ratingModal.getBoundingClientRect());
 
   if (!isInModal) closeModal();
   event.stopImmediatePropagation();
 });
 
-function initRatingForm() {
+function checkTapInRect(event, rect) {
+  return (
+    rect.top <= event.clientY &&
+    event.clientY <= rect.top + rect.height &&
+    rect.left <= event.clientX &&
+    event.clientX <= rect.left + rect.width
+  );
+}
+
+function initRatingForm(exerciseId) {
   const openRatingModalButton = document.querySelector(
     SELECTORS.openRatingModalButton
   );
@@ -221,33 +228,34 @@ function initRatingForm() {
   }
 
   const ratingForm = document.querySelector(SELECTORS.ratingForm);
-  ratingForm.addEventListener('submit', event => {
+  ratingForm.addEventListener('submit', async event => {
     event.preventDefault();
 
     const form = event.target;
     const email = form.elements.email.value;
-    const comment = form.elements.comment.value;
+    const review = form.elements.comment.value;
 
     if (!selectedRating) {
       alert('Choose your rating');
     } else if (!email) {
       alert('Enter your email');
-    } else if (!comment) {
+    } else if (!review) {
       alert('Leave a comment');
     } else {
-      updateData(`exercises/${exerciseId}/rating`, {
-        rate: selectedRating,
-        email,
-        review: comment,
-      })
-        .then(() => {
-          ratingModal.classList.add(CLASS_NAMES.visuallyHidden);
-          clearRatingForm(form);
-          exerciseModal.classList.remove(CLASS_NAMES.visuallyHidden);
-        })
-        .catch(error => {
-          alert(`Error: ${error.message}`);
+      try {
+        const nextExercise = await api.setExerciseRating({
+          exerciseId,
+          rate: selectedRating,
+          email,
+          review,
         });
+        ratingModal.classList.add(CLASS_NAMES.visuallyHidden);
+        clearRatingForm(form);
+        exerciseModal.classList.remove(CLASS_NAMES.visuallyHidden);
+        updateModalContent(nextExercise);
+      } catch (error) {
+        alert(`Error: ${error.message}`);
+      }
     }
     event.stopImmediatePropagation();
   });
@@ -264,25 +272,6 @@ export function initModalListeners() {
       loadModalData(exerciseId);
     });
   });
-}
-
-function getFavorites() {
-  return JSON.parse(localStorage.getItem('favorites')) || [];
-}
-
-function addToFavorites(exerciseId) {
-  const favorites = getFavorites();
-  favorites.push(exerciseId);
-  localStorage.setItem('favorites', JSON.stringify(favorites));
-}
-
-function removeFromFavorites(exerciseId) {
-  const favorites = getFavorites();
-  const index = favorites.indexOf(exerciseId);
-  if (index !== -1) {
-    favorites.splice(index, 1);
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-  }
 }
 
 function updateStarRating(rating) {
@@ -305,8 +294,8 @@ function addStars(starsCount, rating) {
     svg.innerHTML = `
       <defs>
         <linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="${percent}%" stop-color="var(--accent-color)" />
-          <stop offset="${percent}%" stop-color="var(--rating-color)" />
+          <stop offset="${percent}%" stop-color="var(--color-accent)" />
+          <stop offset="${percent}%" stop-color="var(--color-rating)" />
         </linearGradient>
       </defs>
       <use href="${iconsPath}#star" fill="url(#${gradientId})"></use>
