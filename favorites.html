@@ -18,8 +18,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script type="module" crossorigin src="/goit-js-finalproject-team-6/assets/menu-CA55vn1W.js"></script>
-    <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/menu-DNozCepw.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/styles-CrdB206k.css">
   </head>
   <body>
     <header class="header">
@@ -35,7 +34,7 @@
       </svg>
     </a>
 
-  <ul class="nav-list">
+    <ul class="nav-list">
   <li class="nav-item">
     <a
       class="nav-link"
@@ -99,24 +98,90 @@
 </ul>
 
 
-
-  <button
-    type="button"
-    aria-label="Open menu"
-    class="burger-menu"
-    onclick="toggleMenu('open')"
-  >
-    <svg class="burger-menu-icon">
-      <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#burger"></use>
-    </svg>
-  </button>
-  <!-- </div> -->
+    <button
+      type="button"
+      aria-label="Open menu"
+      class="burger-menu"
+      onclick="toggleMenu('open')"
+    >
+      <svg class="burger-menu-icon">
+        <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#burger"></use>
+      </svg>
+    </button>
+  </div>
 </header>
 
 
     <main>
       <div class="container">
-        <h2 class="main-title">Favorites page</h2>
+        <main>
+  <section class="favorites">
+    <h1 class="favorites-tittle">Favorites</h1>
+
+    <div class="favorites-thumb">
+      <div class="quote-conteiner">
+        <div class="favorites-quote">
+          <svg class="man-svg" width="34" height="32">
+            <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#icon-icon"></use>
+          </svg>
+
+          <div class="quote-content">
+            <svg class="commas-svg" width="20" height="20">
+              <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#icon-inverted-commas"></use>
+            </svg>
+
+            <h2 class="quote-tittle">Quote of the day</h2>
+
+            <p class="quote-text">
+              A lot of times I find that people who are blessed with the most
+              talent don't ever develop that attitude, and the ones who aren't
+              blessed in that way are the most competitive and have the biggest
+              heart.
+            </p>
+            <p class="quote-author"></p>
+          </div>
+        </div>
+
+        <div class="features-container">
+          <div class="features">
+            <div class="features-content">
+              <svg width="20" height="20">
+                <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#icon-dumbbell-black"></use>
+              </svg>
+              <div class="text-pozition">
+                <p class="features-tittle">110 min</p>
+                <p class="favorites-text">Daily norm of sports</p>
+              </div>
+            </div>
+          </div>
+
+          <img
+            class="favorites-img"
+            srcset="/goit-js-finalproject-team-6/assets/mobile-1x-D2WEsGcs.webp, /goit-js-finalproject-team-6/assets/tablet-1x-DFsoHRgm.webp, /goit-js-finalproject-team-6/assets/desktop-1x-D1hUaCDd.webp"
+            sizes="(min-width: 1440px) 239px, (min-width: 768px) 344px, 100vw"
+            src="./img/favorite/mobile-1x.webp"
+            alt="women walking outdoors"
+          />
+        </div>
+      </div>
+      <div class="js-hidden-text">
+        <p class="favorites-text default-text">
+          It appears that you haven't added any exercises to your favorites yet.
+          To get started, you can add exercises that you like to your favorites
+          for easier access in the future.
+        </p>
+      </div>
+      <div class="favorites-gallery">
+        <ul class="gallery-list"></ul>
+        <div
+          id="tui-pagination-container"
+          class="tui-pagination favorite-tui-pagination"
+        ></div>
+      </div>
+    </div>
+  </section>
+</main>
+
       </div>
     </main>
 
@@ -197,10 +262,8 @@
   </li>
 </ul>
 
-
   </div>
 </div>
-
 
 
     <script src="./js/menu.js"></script>
