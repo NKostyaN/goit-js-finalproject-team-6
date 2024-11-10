@@ -19,14 +19,19 @@
       referrerpolicy="no-referrer"
     />
     <script type="module" crossorigin src="/goit-js-finalproject-team-6/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/menu-D5xpgG4z.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/menu-C_-A8mzi.js">
     <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/vendor-CNNbG8jS.js">
-    <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/menu-qYe0qu_c.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/menu-CZ80Fd7Y.css">
   </head>
   <body>
     <header class="header">
   <div class="container">
-    <a class="header-logo" href="./index.html" aria-label="Site logo">
+    <a
+      class="header-logo"
+      href="./index.html"
+      aria-label="Site logo"
+      rel="noopener noreferrer"
+    >
       <svg class="logo-svg">
         <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#logo-dark"></use>
       </svg>
@@ -34,10 +39,20 @@
 
   <ul class="nav-list">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" aria-label="Home page">Home</a>
+    <a
+      class="nav-link"
+      href="./index.html"
+      aria-label="Home page"
+      rel="noopener noreferrer"
+      >Home</a
+    >
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./favorites.html" aria-label="Favorites page"
+    <a
+      class="nav-link"
+      href="./favorites.html"
+      aria-label="Favorites page"
+      rel="noopener noreferrer"
       >Favorites</a
     >
   </li>
@@ -50,6 +65,7 @@
       class="soc-link"
       aria-label="Facebook"
       target="_blank"
+      rel="noopener noreferrer"
     >
       <svg class="icon">
         <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#facebook"></use>
@@ -62,6 +78,7 @@
       class="soc-link"
       aria-label="Instagram"
       target="_blank"
+      rel="noopener noreferrer"
     >
       <svg class="icon">
         <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#instagram"></use>
@@ -74,6 +91,7 @@
       class="soc-link"
       aria-label="Youtube"
       target="_blank"
+      rel="noopener noreferrer"
     >
       <svg class="icon">
         <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#youtube"></use>
@@ -121,15 +139,16 @@
       </div>
     </main>
 
-    <button class="button-start" data-modal-open value="64f389465ae26083f39b17a2">
-  <p>TMP Show Modal</p>
-</button>
-
     <footer class="footer">
   <div class="container">
     <div class="footer-content">
       <div class="footer-content-start">
-        <a class="footer-logo" href="./index.html" aria-label="Site logo">
+        <a
+          class="footer-logo"
+          href="./index.html"
+          aria-label="Site logo"
+          rel="noopener noreferrer"
+        >
           <svg class="logo-svg">
             <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#logo-light"></use>
           </svg>
@@ -137,10 +156,20 @@
 
         <ul class="nav-list">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" aria-label="Home page">Home</a>
+    <a
+      class="nav-link"
+      href="./index.html"
+      aria-label="Home page"
+      rel="noopener noreferrer"
+      >Home</a
+    >
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./favorites.html" aria-label="Favorites page"
+    <a
+      class="nav-link"
+      href="./favorites.html"
+      aria-label="Favorites page"
+      rel="noopener noreferrer"
       >Favorites</a
     >
   </li>
@@ -153,6 +182,7 @@
       class="soc-link"
       aria-label="Facebook"
       target="_blank"
+      rel="noopener noreferrer"
     >
       <svg class="icon">
         <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#facebook"></use>
@@ -165,6 +195,7 @@
       class="soc-link"
       aria-label="Instagram"
       target="_blank"
+      rel="noopener noreferrer"
     >
       <svg class="icon">
         <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#instagram"></use>
@@ -177,6 +208,7 @@
       class="soc-link"
       aria-label="Youtube"
       target="_blank"
+      rel="noopener noreferrer"
     >
       <svg class="icon">
         <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#youtube"></use>
@@ -197,8 +229,14 @@
           <p class="footer-subscribe-text">
             Subscribe and learn about new exercises!
           </p>
-          <form class="footer-form">
-            <input type="email" placeholder="Email" required />
+          <form class="footer-form" id="subscriptionForm">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+            />
             <button type="submit">Send</button>
           </form>
         </div>
@@ -209,11 +247,19 @@
       <p class="footer-note-copyright">Your Energy. All rights reserved.</p>
 
       <div class="footer-links">
-        <a class="footer-link" href="#" aria-label="Privacy Policy"
+        <a
+          class="footer-link"
+          href="#"
+          aria-label="Privacy Policy"
+          rel="noopener noreferrer"
           >Privacy Policy</a
         >
         /
-        <a class="footer-link" href="#" aria-label="Terms of Service"
+        <a
+          class="footer-link"
+          href="#"
+          aria-label="Terms of Service"
+          rel="noopener noreferrer"
           >Terms of Service</a
         >
       </div>
@@ -222,6 +268,11 @@
     </div>
   </div>
 </footer>
+
+
+    <button class="button-start" data-modal-open value="64f389465ae26083f39b17a2">
+  <p>TMP Show Modal</p>
+</button>
 
     <div class="menu-backdrop">
   <div class="menu">
@@ -239,10 +290,20 @@
     </div>
     <ul class="nav-list">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" aria-label="Home page">Home</a>
+    <a
+      class="nav-link"
+      href="./index.html"
+      aria-label="Home page"
+      rel="noopener noreferrer"
+      >Home</a
+    >
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./favorites.html" aria-label="Favorites page"
+    <a
+      class="nav-link"
+      href="./favorites.html"
+      aria-label="Favorites page"
+      rel="noopener noreferrer"
       >Favorites</a
     >
   </li>
@@ -255,6 +316,7 @@
       class="soc-link"
       aria-label="Facebook"
       target="_blank"
+      rel="noopener noreferrer"
     >
       <svg class="icon">
         <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#facebook"></use>
@@ -267,6 +329,7 @@
       class="soc-link"
       aria-label="Instagram"
       target="_blank"
+      rel="noopener noreferrer"
     >
       <svg class="icon">
         <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#instagram"></use>
@@ -279,6 +342,7 @@
       class="soc-link"
       aria-label="Youtube"
       target="_blank"
+      rel="noopener noreferrer"
     >
       <svg class="icon">
         <use href="/goit-js-finalproject-team-6/assets/sprites-7s4RqKzA.svg#youtube"></use>
@@ -421,5 +485,6 @@
 
     <script src="./js/menu.js"></script>
     <script src="./js/nav.js"></script>
+    <script src="./js/subscribe.js"></script>
   </body>
 </html>
