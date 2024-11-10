@@ -5,14 +5,12 @@
 
 @media screen and (min-width: 768px) {
   .favorites {
-    padding-top: 100px;
     padding-bottom: 100px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .favorites {
-    padding-top: 90px;
     padding-bottom: 51px;
   }
 }
@@ -47,7 +45,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .quote-conteiner {
+  .quote-container {
     display: flex;
     flex-direction: column;
     margin-right: 32px;
@@ -118,6 +116,8 @@
   flex-direction: column;
   padding-left: 48px;
 }
+
+
 
 @media screen and (min-width: 768px) {
   .quote-content {
@@ -326,7 +326,7 @@
   font-size: 16px;
 }
 
-.exersise-header {
+.exercise-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -402,7 +402,7 @@
   color: #242424;
 }
 
-.exercice-information {
+.exercise-information {
   display: flex;
   justify-content: space-between;
   margin-top: 16px;

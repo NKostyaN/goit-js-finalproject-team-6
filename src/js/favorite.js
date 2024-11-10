@@ -1,173 +1,186 @@
-// import icon from '../img/sprite.svg';
-// import axios from "axios";
-// import { addFavoriteCards, deleteCard, getAllFavoriteCards } from "./local-storage";
-// import { makePaginationByItems } from './pagination.js';
-// import { handleOpenModalClick } from './modal-exercise';
-// import { processRemovalsFromFavorites} from './modal-exercise';
+import icons from '../img/icons/sprites.svg';
+import axios from "axios";
+import { getFavorites, removeFromFavorites } from "./storage";
+import { api } from './api';
+// import { handleModalOpen2 } from './modal.js';
 
 
-// async function renderQuote() {
-//     const currentDate = new Date();
-//     const currentDay = currentDate.getDate();
-
-//     let storedQuoteState = JSON.parse(localStorage.getItem("quoteData")) ?? {};
-
-//     const storedQuoteDay = storedQuoteState.day ?? 0;
-
-//     if (currentDay !== storedQuoteDay) {
-//         const quoteData = await serviceQuote();
-
-//         quoteData.day = currentDay;
-//         localStorage.setItem("quoteData", JSON.stringify(quoteData));
-//         storedQuoteState = quoteData;
-//     }
-
-//     const quoteText = document.querySelector(".quote-text"); 
-//     const quoteAuthor = document.querySelector(".quote-author");
-//     quoteText.textContent = storedQuoteState.quote; 
-//     quoteAuthor.textContent = storedQuoteState.author;
-
-// }
-
-// async function serviceQuote() {
-//   try {
-//     const response = await axios.get(
-//       `https://your-energy.b.goit.study/api/quote`
-//     );
-//     return response.data; 
-//   } catch (error) {
-//     return null;
-//   }
-// }
-
-// renderQuote();
 
 
-// const Refs = {
-//   galleryList: document.querySelector(".gallery-list"),
-//   defaultText: document.querySelector(".js-hidden-text"),
-// }
+async function renderQuote() {
+    const currentDate = new Date();
+    const currentDay = currentDate.getDate();
 
-// function createExerciseCards(exercises) {
-  
-//     return exercises.map(({_id, bodyPart, burnedCalories, target, name, time}) => 
-//       `<li data-id="${_id}" class="exercise-card ">
-//         <div class="exersise-header">
-//           <div class="exercise-trash">
-//             <p class="workout">WORKOUT</p>
-//           <button class="trash-btn" type="submit">
-//           <svg class="trash-svg"  width="16" height="16">
-//                 <use id = "dell" href="${icon}#icon-trash-modal"></use>
-//                 </svg> 
-//           </button>              
-//           </div>    
-//             <button id = "open" class="exercise-btn" type="button">Start
-//               <svg id = "arrow" class="arrow-svg" width="16" height="16">
-//                 <use href="${icon}#icon-arrow"></use>
-//               </svg>
-//             </button>
-//         </div>  
-//           <div class = "exercise-tittle"> 
-//           <div class= "man-svg-thumb">
-//             <svg width="24" height="24">
-//               <use href="${icon}#icon-icon-2"></use>
-//             </svg>
-//             </div>
-//             <p class="favorite-exercise-name">${capitalize(name)}</p>
-//           </div> 
-//           <div class="exercice-information">
-//             <p class="exercise-category">Burned calories: <span>${burnedCalories}/${time}min</span></p>
-//             <p class="exercise-category">Body part: <span>${bodyPart}</span></p>
-//             <p class="exercise-category">Target: <span>${target}</span></p>
-//           </div>            
-//       </li>`
-//     ).join("");
-// }
+    let storedQuoteState = JSON.parse(localStorage.getItem("quoteData")) ?? {};
 
-// function renderExercises(exercises) {
-//   let cards = createExerciseCards(exercises);
+    const storedQuoteDay = storedQuoteState.day ?? 0;
 
-//   Refs.galleryList.innerHTML=""
-//   Refs.galleryList.insertAdjacentHTML('beforeend', cards);
+    if (currentDay !== storedQuoteDay) {
+        const quoteData = await serviceQuote();
 
-//   Refs.defaultText.style.display = 'none';
-//   Refs.galleryList.style.display = 'flex';
-    
-//   const cardsEl = document.querySelectorAll(".exercise-card"); 
-//   for (let card of cardsEl) {
-//     card.addEventListener('click', handleCardClick);  
-//   }
+        quoteData.day = currentDay;
+        localStorage.setItem("quoteData", JSON.stringify(quoteData));
+        storedQuoteState = quoteData;
+    }
 
-//   if (exercises.length === 0) {
-//     Refs.defaultText.style.display = 'flex';
-//     Refs.galleryList.style.display = 'none';    
-//  } 
-// }
+    const quoteText = document.querySelector(".quote-text"); 
+    const quoteAuthor = document.querySelector(".quote-author");
+    quoteText.textContent = storedQuoteState.quote; 
+    quoteAuthor.textContent = storedQuoteState.author;
 
-// let perPage = 7
-// window.addEventListener("resize", renderCards)
-// function renderCards() {
-//   let exercises = getAllFavoriteCards();
+}
+
+
+
+renderQuote();
+
+
+const Refs = {
+  galleryList: document.querySelector(".gallery-list"),
+  defaultText: document.querySelector(".js-hidden-text"),
+}
+
+async function getAllFavoriteModels(exercises) {
+  const exModels = await Promise.all(
+    exercises.map(async (element) => {
+      return await api.exerciseInfo(element);
+    })
+  );
+
+  return exModels;
+}
   
 
-//   if (window.innerWidth >= 768) {
-    
-//     perPage = 10; 
+  async function createExerciseCards(exercises) {
   
-//   }
-
-//   if (window.innerWidth >= 1440) {
+    return getAllFavoriteModels(exercises).then(
+        value => {
+            return value.map(({_id, bodyPart, burnedCalories, target, name, time}) => 
+                `<li data-id="${_id}" class="exercise-card">
+                  <div class="exercise-header">
+                    <div class="exercise-trash">
+                      <p class="workout">WORKOUT</p>
+                    <button class="trash-btn" type="submit">
+                    <svg class="trash-svg"  width="16" height="16">
+                          <use id = "dell" href="${icons}#icon-trash-fav"></use>
+                          </svg> 
+                    </button>              
+                    </div>    
+                      <button id = "open" class="exercise-btn" type="button">Start
+                        <svg id = "arrow" class="arrow-svg" width="16" height="16">
+                          <use href="${icons}#icon-arrow"></use>
+                        </svg>
+                      </button>
+                  </div>  
+                    <div class = "exercise-tittle"> 
+                    <div class= "man-svg-thumb">
+                      <svg width="24" height="24">
+                        <use href="${icons}#icon-icon-2"></use>
+                      </svg>
+                      </div>
+                      <p class="favorite-exercise-name">${capitalize(name)}</p>
+                    </div> 
+                    <div class="exercise-information">
+                      <p class="exercise-category">Burned calories: <span>${burnedCalories}/${time}min</span></p>
+                      <p class="exercise-category">Body part: <span>${capitalize(bodyPart)}</span></p>
+                      <p class="exercise-category">Target: <span>${capitalize(target)}</span></p>
+                    </div>            
+                </li>`
+              ).join("")
+        },)
+        
    
-//     perPage = 6; 
-  
-//   }
+}
 
-//   renderExercises(exercises.slice(0, perPage))
-
-//   makePaginationByItems(perPage, exercises.length).on(
-//     'afterMove',
-//     ({ page }) => {
-//         let start = (page-1)*perPage
-//       let end = page * perPage;
+function renderExercises(exercises) {
+     createExerciseCards(exercises).then(
+    cards => {
+        Refs.galleryList.innerHTML=""
+        Refs.galleryList.insertAdjacentHTML('beforeend', cards);
       
-//   renderExercises(exercises.slice(start, end))
-//     });
-// }
+        Refs.defaultText.style.display = 'none';
+        Refs.galleryList.style.display = 'flex';
+          
+        const cardsEl = document.querySelectorAll(".exercise-card"); 
+        for (let card of cardsEl) {
+          card.addEventListener('click', handleCardClick);  
+        }
+      
+        if (exercises.length === 0) {
+          Refs.defaultText.style.display = 'flex';
+          Refs.galleryList.style.display = 'none';    
+       } 
+    },
+    error => {
+      console.log(error); // "Error! Error passed to reject function"
+    }
+  );
 
-// renderCards(); 
+ 
+}
 
-// const cards = document.querySelectorAll(".exercise-card"); 
+let perPage = 7
+window.addEventListener("resize", renderCards)
+function renderCards() {
+  let exercises = getFavorites();
+  
 
-// for (let card of cards) {
-//   card.addEventListener('click', handleCardClick);
-// }
-
-// async function handleCardClick(event) {
-//   switch (event.target.id) {
-//     case "dell":
-//       return removeCard(event);
-//     case "open":
-//       return openCard(event);
-//     case "arrow":
-//       return openCard(event);
-//   }
-// }
-
-// function removeCard(event) {
-//   const id = event.currentTarget.dataset.id; 
-//   deleteCard(id);
-//   processRemovalsFromFavorites(id, event);
-//   renderCards();  
-// }
-
-// async function openCard(event) {
-//   const id = event.currentTarget.dataset.id; 
+  if (window.innerWidth >= 768) {
     
-//   handleOpenModalClick(event, id);
-// }
+    perPage = 10; 
+  
+  }
 
-// function capitalize(s) {
-//   return s[0].toUpperCase() + s.slice(1);
-// }
+  if (window.innerWidth >= 1440) {
+   
+    perPage = 6; 
+  
+  }
 
+  renderExercises(exercises.slice(0, perPage))
+
+  makePaginationByItems(perPage, exercises.length).on(
+    'afterMove',
+    ({ page }) => {
+        let start = (page-1)*perPage
+      let end = page * perPage;
+      
+  renderExercises(exercises.slice(start, end))
+    });
+}
+
+renderCards(); 
+
+const cards = document.querySelectorAll(".exercise-card"); 
+
+for (let card of cards) {
+  card.addEventListener('click', handleCardClick);
+}
+
+async function handleCardClick(event) {
+  switch (event.target.id) {
+    case "dell":
+      return removeCard(event);
+    case "open":
+      return openCard(event);
+    case "arrow":
+      return openCard(event);
+  }
+}
+
+function removeCard(event) {
+  const id = event.currentTarget.dataset.id; 
+  removeFromFavorites(id, );
+  renderCards();  
+}
+
+async function openCard(event) {
+  const id = event.currentTarget.dataset.id; 
+    
+}
+
+function capitalize(s) {
+        return s[0].toUpperCase() + s.slice(1);
+    
+}
 
