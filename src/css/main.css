@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
 /********************** Exercises section **********************/
 .exercises-row{
   display: flex;
@@ -142,3 +144,96 @@
   }
 }
 /********************** End of Exercises section **********************/
+
+.exercise-item {
+
+  width: 345px;
+  height: 141px;
+  list-style: none;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.exercise-details__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exercise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-workout {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.exercise-rating {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.exercise-rating span {
+  color: #f9a825;
+  margin-left: 2px;
+}
+
+.btn-start {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+.exercise-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.exercise-info{
+  display: flex;
+  flex-direction: row;
+  gap:  10px;
+}
+.exercise-info p {
+  margin: 2px 0;
+  font-size: 0.9rem;
+  font-family: DM Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+
+
+}
+.exercise-info-title{
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(36, 36, 36, 0.4)
+}
+
+.truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: '..';
+  display: inline-block;
+  max-width: 180px; 
+  vertical-align: bottom;
+}
