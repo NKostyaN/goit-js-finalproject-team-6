@@ -18,14 +18,6 @@
 }
 
 .favorites-tittle {
-  /* color: #242424;
-  font-family: NeueMontrealRegular;
-  font-size: 28px;
-  font-style: normal;
-  line-height: 38px;
-  letter-spacing: -0.56px; */
-
-  font-weight: 400;
   font-size: 28px;
   line-height: 1.35714;
   letter-spacing: -0.02em;
@@ -53,30 +45,6 @@
     margin-top: 16px;
   }
 }
-
-/* .favorites-container {
-    min-width: 320px;
-    max-width: 480px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0 auto;
-}
-
-@media screen and (min-width: 768px) {
-    .favorites-container {
-        max-width: 768px;
-        padding-left: 32px;
-        padding-right: 32px;  
-    }  
-}
-
-@media screen and (min-width: 1440px) {
-    .favorites-container {
-        max-width: 1440px;
-        padding-left: 32px;
-        padding-right: 32px;
-    }
- } */
 
 @media screen and (min-width: 1440px) {
   .quote-conteiner {
@@ -127,7 +95,6 @@
 
 .quote-tittle {
   color: #f4f4f4;
-  /* font-family: NeueMontrealRegular; */
   font-size: 20px;
   font-weight: 500;
   line-height: 20px;
@@ -142,7 +109,6 @@
 
 .quote-text {
   color: rgba(244, 244, 244, 0.6);
-  /* font-family: NeueMontrealRegular; */
   font-size: 14px;
   line-height: 18px;
 }
@@ -162,7 +128,6 @@
 .quote-author {
   margin-top: 18px;
   color: #f4f4f4;
-  /* font-family: NeueMontrealRegular; */
   font-size: 16px;
   line-height: 24px;
 }
@@ -178,7 +143,6 @@
 
 .features-tittle {
   color: #242424;
-  /* font-family: Neue MontrealMedium; */
   font-size: 20px;
   font-weight: 500;
   line-height: 20px;
@@ -192,7 +156,6 @@
 
 .favorites-text {
   color: rgba(36, 36, 36, 0.6);
-  /* font-family: NeueMontrealRegular; */
   font-size: 14px;
   line-height: 18px;
 }
@@ -332,7 +295,6 @@
 
 .workout {
   display: inline-block;
-  /* font-family: NeueMontrealRegular; */
   font-size: 12px;
   font-weight: 500;
   line-height: normal;
@@ -371,7 +333,6 @@
 }
 
 .favorite-exercise-name {
-  /* font-family: NeueMontrealRegular; */
   font-size: 20px;
   line-height: 20px;
   line-height: 20px;
@@ -427,7 +388,6 @@
 
 .exercise-category {
   color: rgba(36, 36, 36, 0.4);
-  /* font-family: NeueMontrealRegular; */
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;

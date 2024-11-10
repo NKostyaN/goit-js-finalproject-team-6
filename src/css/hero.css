@@ -1,6 +1,5 @@
 /* Основні стилі */
 body {
-  font-family: 'DM Sans', sans-serif;
   margin: 0;
   padding: 0;
   color: #242424;
@@ -31,7 +30,6 @@ body {
 
 .hero-text {
   font-size: 18px;
-  font-weight: 400;
   line-height: 24px;
   letter-spacing: -0.02em;
   color: #242424;
@@ -81,7 +79,7 @@ body {
 }
 
 /* Адаптивність для планшетної версії */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1440px) {
   .hero-title {
     font-size: 74px;
     max-width: 639px;
