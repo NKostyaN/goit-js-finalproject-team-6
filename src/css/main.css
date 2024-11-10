@@ -1,36 +1,29 @@
-/********************** Exercises section **********************/
-.exercises-row{
-  display: flex;
-  flex-wrap: wrap;
-  margin-inline: -0.5rem;
+/********************** Breadcrumbs and Filters section **********************/
+.breadcrumbs{
+  display: inline-flex;
 }
 
-.exercises-row > * {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-inline: 0.5rem;
-}
-
-.exercises__col{
-  flex: 0 0 auto;
-  width: 100%;
-  margin-top: 2rem;
+.breadcrumbs h3{
+  font-size: 2.75rem;
+  line-height: 3rem;
+  font-weight: 400;
+  margin-bottom: 0;
 }
 
 .exercises-filters{
   display: flex;
   color: #24242499;
-}
-
-.exercises-filters ul{
-  display: flex;
+  margin-top: 32px;
 }
 
 .exercises-filters li{
   padding: 8px 0px;
-  margin: 0 20px 0 0;
   cursor: pointer;
+  margin-inline-end: 20px;
+}
+
+.exercises-filters li:last-child{
+  margin-inline-end: 0;
 }
 
 .exercises-filters li.exercises-filters__selected{
@@ -48,6 +41,49 @@
   border-radius: 2px;
   bottom: 0;
   left: 0;
+  width: 100%;
+}
+
+.exercises-mb_20{
+  margin-bottom: 20px;
+}
+
+.exercises-filters{
+  margin-top: 20px;
+}
+
+@media (min-width: 1440px) {
+  .exercises-filters{
+    margin-top: 0;
+  }
+}
+/********************** End of Breadcrumbs and Filters section **********************/
+
+/********************** Exercises section **********************/
+.exercises{
+  gap: 32px 0;
+}
+
+.exercises-row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: -0.5rem;
+}
+
+.exercises-row--jsb-ca{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exercises-row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-inline: 0.5rem;
+}
+
+.exercises__col{
+  flex: 0 0 auto;
   width: 100%;
 }
 
@@ -139,6 +175,11 @@
 @media (min-width: 1440px) {
   .exercises-filters{
     justify-content: flex-end;
+  }
+
+  .exercises-col-xl-auto{
+    flex: 0 0 auto;
+    width: auto;
   }
 }
 /********************** End of Exercises section **********************/

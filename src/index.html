@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Energy</title>
-    <link rel="icon" type="image/x-icon" href="./img/icons/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;1,9..40,500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
-      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <load src="./partials/header.html" />
 
-    <main>
-      <load src="./partials/hero.html" />
-      <div class="container">
-        <section>
-          <load src="./partials/quotes.html" />
-          <load src="./partials/gallery.html" />
-          <load src="./partials/openModalButton.html" />
-        </section>
-      </div>
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Energy</title>
+  <link rel="icon" type="image/x-icon" href="./img/icons/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;1,9..40,500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
 
-    <load src="./partials/footer.html" />
+<body>
+  <load src="./partials/header.html" />
 
-    <load src="./partials/openModalButton.html" />
-    <load src="./partials/menu.html" />
-    <load src="./partials/modal.html" />
+  <main>
+    <load src="./partials/hero.html" />
+    <div class="container">
+      <section>
+        <div class="exercises-row exercises-row--jsb-ca exercises-mb_20">
+          <div class="exercises-col-xl-auto">
+            <ul class="breadcrumbs">
+              <li>
+                <h3>Exercises</h3>
+              </li>
+            </ul>
+          </div>
+          <div class="exercises-col-xl-auto">
+            <ul class="exercises-filters">
+              <li class="exercises-filters__selected" id="Muscles">Muscles</li>
+              <li id="Body%20parts">Body parts</li>
+              <li id="Equipment">Equipment</li>
+            </ul>
+          </div>
+        </div>
+        <load src="./partials/quotes.html" />
+        <load src="./partials/gallery.html" />
+        <load src="./partials/openModalButton.html" />
+      </section>
+    </div>
+  </main>
 
-    <script src="./js/menu.js"></script>
-    <script src="./js/nav.js"></script>
-    <script src="./js/subscribe.js"></script>
-    <script type="module" src="./js/main.js"></script>
-  </body>
+  <load src="./partials/footer.html" />
+
+  <load src="./partials/openModalButton.html" />
+  <load src="./partials/menu.html" />
+  <load src="./partials/modal.html" />
+
+  <script src="./js/menu.js"></script>
+  <script src="./js/nav.js"></script>
+  <script src="./js/subscribe.js"></script>
+  <script type="module" src="./js/main.js"></script>
+</body>
+
 </html>
