@@ -21,29 +21,11 @@
 
   <main>
     <load src="./partials/hero.html" />
-    <div class="container">
-      <section>
-        <div class="exercises-row exercises-row--jsb-ca exercises-mb_20">
-          <div class="exercises-col-xl-auto">
-            <ul class="breadcrumbs">
-              <li>
-                <h3>Exercises</h3>
-              </li>
-            </ul>
-          </div>
-          <div class="exercises-col-xl-auto">
-            <ul class="exercises-filters">
-              <li class="exercises-filters__selected" id="Muscles">Muscles</li>
-              <li id="Body%20parts">Body parts</li>
-              <li id="Equipment">Equipment</li>
-            </ul>
-          </div>
-        </div>
-        <load src="./partials/quotes.html" />
-        <load src="./partials/gallery.html" />
-        <load src="./partials/openModalButton.html" />
-      </section>
-    </div>
+    <load src="./partials/filters.html" />
+    <section class="container">
+      <load src="./partials/quotes.html" />
+      <load src="./partials/gallery.html" />
+    </section>
   </main>
 
   <load src="./partials/footer.html" />
@@ -52,9 +34,9 @@
   <load src="./partials/menu.html" />
   <load src="./partials/modal.html" />
 
-  <script src="./js/menu.js"></script>
-  <script src="./js/nav.js"></script>
-  <script src="./js/subscribe.js"></script>
+  <script type="module" src="./js/menu.js"></script>
+  <script type="module" src="./js/nav.js"></script>
+  <script type="module" src="./js/subscribe.js"></script>
   <script type="module" src="./js/main.js"></script>
 </body>
 
