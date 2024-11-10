@@ -1,60 +1,83 @@
-/* Основні стилі */
-body {
-  margin: 0;
-  padding: 0;
-  color: #242424;
-}
-
-.HeroSection {
+.hero-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  background-color: #f4f4f9;
-  text-align: center;
+  padding-bottom: 40px;
+}
+
+.hero-content {
+  display: block;
+  width: 100%;
 }
 
 .hero-title {
-  font-size: 74px;
-  font-weight: bold;
-  line-height: 74px;
+  font-size: 38px;
+  line-height: 1.15789;
   letter-spacing: -0.02em;
-  color: #242424;
-  margin: 0;
-  max-width: 639px;
+  color: var(--color-black);
+  max-width: 335px;
 }
 
 .hero-title span {
   font-style: italic;
 }
 
-.hero-text {
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: -0.02em;
-  color: #242424;
-  max-width: 528px;
-  margin: 10px 0 20px;
+.hero-title::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: 6px;
+  background-image: url('../img/icons/heroicon.svg');
+  background-size: 38px 38px;
+  width: 38px;
+  height: 38px;
 }
 
-.HeroTags {
+.hero-text {
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.022em;
+  text-align: left;
+  color: var(--color-black);
+  max-width: 335px;
+  padding: 20px 0;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 335px;
+  height: 460px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-tags {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.hero-tags-ul {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 8px;
   width: 100%;
-  max-width: 333px;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
 }
 
 .tag {
-  width: 72px;
+  padding: 4px 12px;
   height: 26px;
-  background-color: #ffffff;
-  color: #242424;
-  font-size: 0.8rem;
-  border: 1px solid #242424;
+  color: var(--color-black);
+  font-size: 14px;
+  line-height: 1.28571;
+  border: 1px solid var(--color-black);
   border-radius: 30px;
   display: flex;
   align-items: center;
@@ -62,62 +85,90 @@ body {
   cursor: pointer;
 }
 
-.HeroImage {
-  width: 100%;
-  max-width: 335px;
-  height: 460px;
-  background-color: #ffffff;
-  border-radius: 30px;
-  overflow: hidden;
-  margin-top: 20px;
+.hero-desktop-content {
+  display: none;
 }
 
-.HeroImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+@media (max-width: 767px) {
 }
 
 /* Адаптивність для планшетної версії */
-@media (min-width: 768px) and (max-width: 1440px) {
+@media only screen and (min-width: 768px) {
   .hero-title {
     font-size: 74px;
+    line-height: 1;
+    letter-spacing: -0.02em;
     max-width: 639px;
   }
 
   .hero-text {
+    font-size: 18px;
+    line-height: 1.33333;
+    letter-spacing: -0.02em;
     max-width: 528px;
   }
 
-  .HeroImage {
+  .hero-title::before {
+    background-size: 60px 60px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .hero-image {
     max-width: 704px;
     height: 550px;
     border-radius: 60px;
   }
 
-  .HeroTags {
-    max-width: 396px;
-    height: 32px;
+  .hero-tags-ul {
+    justify-content: flex-end;
   }
 
   .tag {
-    width: 86px;
+    padding: 4px 16px;
     height: 32px;
-    font-size: 0.9rem;
+    font-size: 16px;
+    line-height: 1.5;
   }
 }
 
-/* Адаптивність для мобільної версії */
-@media (max-width: 767px) {
-  .hero-title {
-    font-size: 38px;
-    line-height: 44px;
-    max-width: 335px;
+/* Адаптивність для десктопної версії */
+@media only screen and (min-width: 1440px) {
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .hero-text {
-    font-size: 14px;
-    line-height: 18px;
-    max-width: 335px;
+  .hero-image {
+    max-width: 1376px;
+    height: 350px;
+  }
+
+  .hero-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hero-desktop-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .hero-desktop-tags {
+    padding-top: 32px;
+  }
+
+  .hero-tags-ul {
+    display: flex;
+    width: 202px;
+    height: 72px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .hero-tags {
+    display: none;
   }
 }
