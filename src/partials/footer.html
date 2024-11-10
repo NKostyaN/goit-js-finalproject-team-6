@@ -2,7 +2,12 @@
   <div class="container">
     <div class="footer-content">
       <div class="footer-content-start">
-        <a class="footer-logo" href="./index.html" aria-label="Site logo">
+        <a
+          class="footer-logo"
+          href="./index.html"
+          aria-label="Site logo"
+          rel="noopener noreferrer"
+        >
           <svg class="logo-svg">
             <use href="./img/icons/sprites.svg#logo-light"></use>
           </svg>
@@ -20,9 +25,10 @@
           <p class="footer-subscribe-text">
             Subscribe and learn about new exercises!
           </p>
-          <form class="footer-form">
+          <form class="footer-form" id="subscriptionForm">
             <input
               type="email"
+              name="email"
               placeholder="Email"
               required
               pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
@@ -37,11 +43,19 @@
       <p class="footer-note-copyright">Your Energy. All rights reserved.</p>
 
       <div class="footer-links">
-        <a class="footer-link" href="#" aria-label="Privacy Policy"
+        <a
+          class="footer-link"
+          href="#"
+          aria-label="Privacy Policy"
+          rel="noopener noreferrer"
           >Privacy Policy</a
         >
         /
-        <a class="footer-link" href="#" aria-label="Terms of Service"
+        <a
+          class="footer-link"
+          href="#"
+          aria-label="Terms of Service"
+          rel="noopener noreferrer"
           >Terms of Service</a
         >
       </div>
