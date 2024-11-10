@@ -2,7 +2,7 @@
 .header {
   margin-top: 20px;
   @media screen and (max-width: 767px) {
-    padding-bottom: 80px;
+    padding-bottom: 84px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
@@ -51,6 +51,10 @@
   @media screen and (min-width: 768px) {
     display: none;
   }
+}
+.burger-menu:hover,
+.burger-menu:focus {
+  background-color: var(--color-grey);
 }
 
 .burger-menu-icon {
