@@ -1,5 +1,5 @@
 .quotes{
-  margin-block: 80px;
+  margin-block-start: 80px;
   gap: 20px 0;
 }
 
@@ -91,12 +91,13 @@
 
 .quote-image-img {
   width: 100%;
-  border-radius: 20px;
-  overflow: hidden;
 }
 
 .quote-image-img img, .quote-image-img picture, .quote-image-img source{
   width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  max-height: 215px;
 }
 
 /* Tablet Styles */

@@ -72,8 +72,12 @@ function renderExerciseDetailsPage(exercises) {
   container.innerHTML = '';
 
   exercises.forEach(exerciseDetail => {
-    const exerciseElement = document.createElement('li');
+    const wrapperElement = document.createElement('div');
+    wrapperElement.classList.add('exercises-md-col-6');
+
+    const exerciseElement = document.createElement('div');
     exerciseElement.classList.add('exercise-item');
+
     exerciseElement.innerHTML = `
       <div class="exercise-details__item">
         <div class="exercise-header">
@@ -87,7 +91,7 @@ function renderExerciseDetailsPage(exercises) {
         </div>
         <h3 class="exercise-name">${exerciseDetail.name}</h3>
         <div class="exercise-info">
-          <p class="truncate-text"<strong class="exercise-info-title">Burned calories:</strong> ${
+          <p class="truncate-text"><strong class="exercise-info-title">Burned calories:</strong> ${
             exerciseDetail.burnedCalories
           }</p>
           <p class="truncate-text"><strong class="exercise-info-title">Body part:</strong> ${
@@ -99,7 +103,10 @@ function renderExerciseDetailsPage(exercises) {
         </div>
       </div>
     `;
-    container.appendChild(exerciseElement);
+
+    wrapperElement.appendChild(exerciseElement);
+
+    container.appendChild(wrapperElement);
   });
 }
 
