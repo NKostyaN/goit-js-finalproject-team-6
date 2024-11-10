@@ -1,30 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Energy</title>
-    <link rel="icon" type="image/x-icon" href="/goit-js-finalproject-team-6/assets/favicon-jiJwLUNp.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;1,9..40,500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
-      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script type="module" crossorigin src="/goit-js-finalproject-team-6/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/nav-DCuvxPAs.js">
-    <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/vendor-CNNbG8jS.js">
-    <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/nav-CrdB206k.css">
-  </head>
-  <body>
-    <header class="header">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Energy</title>
+  <link rel="icon" type="image/x-icon" href="/goit-js-finalproject-team-6/assets/favicon-jiJwLUNp.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;1,9..40,500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script type="module" crossorigin src="/goit-js-finalproject-team-6/index.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/nav-BlRRAnOx.js">
+  <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/vendor-CNNbG8jS.js">
+  <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/nav-CLnv-HnM.css">
+</head>
+
+<body>
+  <header class="header">
   <div class="container">
     <a
       class="header-logo"
@@ -110,8 +106,8 @@
 </header>
 
 
-    <main>
-      <body>
+  <main>
+    <body>
   <section class="HeroSection">
     <div class="HeroContent">
       <div class="decorative-icon">
@@ -174,125 +170,109 @@
   <!-- <script type="module" src="./js/hero.js"></script> -->
 </body>
 
-      <div class="container">
-        <section>
-          <div class="quotes container">
-  <!-- Quote -->
-  <div class="quote-of-day container">
-    <div class="quote-icon-wrapper">
-      <svg class="quote-icon">
-        <use href="../img/icons/sprites.svg#running-man"></use>
-      </svg>
+    <section class="container">
+  <div class="exercises-row exercises-row--jsb exercises-mb_20 w-full">
+    <div class="exercises-col-xl-auto">
+      <ul class="breadcrumbs">
+        <li>
+          <h3>Exercises</h3>
+        </li>
+      </ul>
     </div>
-    <div class="quote-wraper">
-      <div class="quote-header">
-        <h2 class="quote-title">Quote of the Day</h2>
+    <div class="exercises-col-xl-auto">
+      <ul class="exercises-filters">
+        <li class="exercises-filters__selected" id="Muscles">Muscles</li>
+        <li id="Body%20parts">Body parts</li>
+        <li id="Equipment">Equipment</li>
+      </ul>
+    </div>
+  </div>
+</section>
+    <section class="container">
+      <div class="exercises-row">
+        <div class="exercises-col-xl order-xl-1">
+  <div class="exercises exercises-row" id="exercises-container"></div>
+
+  <div class="exercises-row">
+    <div class="exercises-pagination">
+      <ul></ul>
+    </div>
+    <div class="exercises-row">
+      <div class="exercise-details" id="exercise-details"></div>
+    </div>
+    <button type="button">WORKOUT</button>
+  </div>
+</div>
+        <div class="exercises-col-xl-auto">
+  <div class="quotes">
+    <!-- Quote -->
+    <div class="quote-of-day">
+      <div class="quote-icon-wrapper">
         <svg class="quote-icon">
-          <use href="../img/icons/sprites.svg#quotes"></use>
+          <use href="../img/icons/sprites.svg#running-man"></use>
         </svg>
       </div>
-      <div class="quote">
-        <p class="quote-text">
-          A lot of times I find that people who are blessed with the most talent
-          don't ever develop that attitude, and the ones who aren't blessed in
-          that way are the most competitive and have the biggest heart.
+      <div class="quote-wraper">
+        <div class="quote-header">
+          <h2 class="quote-title">Quote of the Day</h2>
+          <svg class="quote-icon">
+            <use href="../img/icons/sprites.svg#quotes"></use>
+          </svg>
+        </div>
+        <div class="quote">
+          <p class="quote-text">
+            A lot of times I find that people who are blessed with the most talent
+            don't ever develop that attitude, and the ones who aren't blessed in
+            that way are the most competitive and have the biggest heart.
+          </p>
+          <p class="quote-author">Tom Brady</p>
+        </div>
+      </div>
+    </div>
+    <!-- End Quote -->
+
+    <div class="quote-image">
+      <picture class="quote-image-img">
+        <!-- Mobile -->
+        <source srcset="../img/quote/mobile-1x.webp 1x, ../img/quote/mobile-2x.webp 2x, ../img/quote/mobile-3x.webp 3x" type="image/webp" />
+        <source srcset="../img/quote/mobile-1x.png 1x, ../img/quote/mobile-2x.png 2x, ../img/quote/mobile-3x.png 3x" />
+        <!-- Tablet -->
+        <source media="(min-width: 768px)" srcset="../img/quote/tablet-1x.webp 1x, ../img/quote/tablet-2x.webp 2x, ../img/quote/tablet-3x.webp 3x" type="image/webp" />
+        <source media="(min-width: 768px)" srcset="../img/quote/tablet-1x.png 1x, ../img/quote/tablet-2x.png 2x, ../img/quote/tablet-3x.png 3x" />
+        <!-- Desktop -->
+        <source media="(min-width: 1200px)" srcset="../img/quote/desktop-1x.webp 1x, ../img/quote/desktop-2x.webp 2x, ../img/quote/desktop-3x.webp 3x" type="image/webp" />
+        <source media="(min-width: 1200px)" srcset="../img/quote/desktop-1x.png 1x, ../img/quote/desktop-2x.png 2x, ../img/quote/desktop-3x.png 3x" />
+        <img src="../img/quote/mobile-1x.png" alt="women sportswear taking break from workout" loading="lazy" />
+      </picture>
+    </div>
+
+    <!-- News -->
+    <div class="quote-news">
+      <div class="quote-icon-wrapper">
+        <svg class="quote-icon">
+          <use href="../img/icons/sprites.svg#dumbbell"></use>
+        </svg>
+      </div>
+      <div class="quote-news-wraper">
+        <div class="quote-news-header">
+          <h2 class="quote-news-title">110 min</h2>
+          <p class="quote-news-subtitle">Daily norm of sports</p>
+        </div>
+        <p class="quote-news-text">
+          The World Health Organization recommends at least 150 minutes of
+          moderate-intensity aerobic physical activity throughout the week for
+          adults aged 18-64. However, what happens if we adjust that number to 110
+          minutes every day?
         </p>
-        <p class="quote-author">Tom Brady</p>
       </div>
     </div>
   </div>
-  <!-- End Quote -->
-
-  <div class="quote-image container">
-    <picture class="quote-image-img">
-      <!-- Mobile -->
-      <source
-        srcset="../img/quote/mobile-1x.webp 1x, ../img/quote/mobile-2x.webp 2x, ../img/quote/mobile-3x.webp 3x"
-        type="image/webp"
-      />
-      <source
-        srcset="../img/quote/mobile-1x.png 1x, ../img/quote/mobile-2x.png 2x, ../img/quote/mobile-3x.png 3x"
-      />
-      <!-- Tablet -->
-      <source
-        media="(min-width: 768px)"
-        srcset="../img/quote/tablet-1x.webp 1x, ../img/quote/tablet-2x.webp 2x, ../img/quote/tablet-3x.webp 3x"
-        type="image/webp"
-      />
-      <source
-        media="(min-width: 768px)"
-        srcset="../img/quote/tablet-1x.png 1x, ../img/quote/tablet-2x.png 2x, ../img/quote/tablet-3x.png 3x"
-      />
-      <!-- Desktop -->
-      <source
-        media="(min-width: 1200px)"
-        srcset="../img/quote/desktop-1x.webp 1x, ../img/quote/desktop-2x.webp 2x, ../img/quote/desktop-3x.webp 3x"
-        type="image/webp"
-      />
-      <source
-        media="(min-width: 1200px)"
-        srcset="../img/quote/desktop-1x.png 1x, ../img/quote/desktop-2x.png 2x, ../img/quote/desktop-3x.png 3x"
-      />
-      <img
-        src="../img/quote/mobile-1x.png"
-        alt="women sportswear taking break from workout"
-        loading="lazy"
-      />
-    </picture>
-  </div>
-
-  <!-- News -->
-  <div class="quote-news container">
-    <div class="quote-icon-wrapper">
-      <svg class="quote-icon">
-        <use href="../img/icons/sprites.svg#dumbbell"></use>
-      </svg>
-    </div>
-    <div class="quote-news-wraper">
-      <div class="quote-news-header">
-        <h2 class="quote-news-title">110 min</h2>
-        <p class="quote-news-subtitle">Daily norm of sports</p>
+</div>
       </div>
-      <p class="quote-news-text">
-        The World Health Organization recommends at least 150 minutes of
-        moderate-intensity aerobic physical activity throughout the week for
-        adults aged 18-64. However, what happens if we adjust that number to 110
-        minutes every day?
-      </p>
-    </div>
-  </div>
-</div>
+    </section>
+  </main>
 
-          <div class="exercises-row">
-  <div class="exercises-filters">
-    <ul>
-      <li class="exercises-filters__selected" id="Muscles">Muscles</li>
-      <li id="Body%20parts">Body parts</li>
-      <li id="Equipment">Equipment</li>
-    </ul>
-  </div>
-</div>
-
-<div class="exercises exercises-row" id="exercises-container"></div>
-
-<div class="exercises-row">
-  <div class="exercises-pagination">
-    <ul></ul>
-  </div>
-  <div class="exercises-row">
-    <div class="exercise-details" id="exercise-details"></div>
-  </div>
-  <button type="button">WORKOUT</button>
-</div>
-          <button class="button-start" data-modal-open value="64f389465ae26083f39b17a2">
-  <p>TMP Show Modal</p>
-</button>
-
-        </section>
-      </div>
-    </main>
-
-    <footer class="footer">
+  <footer class="footer">
   <div class="container">
     <div class="footer-content">
       <div class="footer-content-start">
@@ -422,11 +402,11 @@
 </footer>
 
 
-    <button class="button-start" data-modal-open value="64f389465ae26083f39b17a2">
+  <button class="button-start" data-modal-open value="64f389465ae26083f39b17a2">
   <p>TMP Show Modal</p>
 </button>
 
-    <div class="menu-backdrop">
+  <div class="menu-backdrop">
   <div class="menu">
     <div class="button-wrapper">
       <button
@@ -505,7 +485,7 @@
   </div>
 </div>
 
-    <div class="backdrop visually-hidden" data-modal>
+  <div class="backdrop visually-hidden" data-modal>
   <div class="modal">
     <button class="btn-modal-close" data-modal-close>
       <svg class="icon icon-modal-close">
@@ -632,5 +612,6 @@
 
 
 
-  </body>
+</body>
+
 </html>
