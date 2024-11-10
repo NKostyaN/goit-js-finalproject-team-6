@@ -20,8 +20,8 @@
     />
     <script type="module" crossorigin src="/goit-js-finalproject-team-6/favorites.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/vendor-CNNbG8jS.js">
-    <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/nav-Cdqq0ghY.js">
-    <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/nav-DlXhbHo6.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-finalproject-team-6/assets/nav-LYMWQTkt.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-finalproject-team-6/assets/nav-3Tbn6DR3.css">
   </head>
   <body>
     <header class="header">
@@ -170,10 +170,7 @@
       </div>
       <div class="favorites-gallery">
         <ul class="gallery-list"></ul>
-        <div
-          id="tui-pagination-container"
-          class="tui-pagination favorite-tui-pagination"
-        ></div>
+        
       </div>
     </div>
   </section>
@@ -261,6 +258,133 @@
 
   </div>
 </div>
+
+    <div class="backdrop visually-hidden" data-modal>
+  <div class="modal">
+    <button class="btn-modal-close" data-modal-close>
+      <svg class="icon icon-modal-close">
+        <use href="/goit-js-finalproject-team-6/assets/sprites-BC2IQxlo.svg#close"></use>
+      </svg>
+    </button>
+
+    <img src="#" alt="Exercise demonstration gif" class="img-modal-exercise" />
+    <div class="modal-info">
+      <p class="title-modal"></p>
+      <div class="rating divider">
+        <span class="rating-value"></span>
+
+        <div class="rating-stars"></div>
+      </div>
+      <div class="stats divider">
+        <ul class="stats-list"></ul>
+      </div>
+      <div class="description"><p class="desc-text"></p></div>
+      <div class="modal-buttons">
+        <button class="btn-modal-filled btn-modal-add-fav">
+          <span class="btn-fav-text">Add to favorites</span>
+          <svg class="icon icon-fav-btn" width="18" height="18">
+            <use class="icon-fav-btn-use"></use>
+          </svg>
+        </button>
+        <button class="btn-modal-give-rating" data-add-rating-open>
+          Give a rating
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="add-rating-modal visually-hidden">
+    <button class="btn-modal-close" data-add-rating-close>
+      <svg class="icon icon-modal-close">
+        <use href="/goit-js-finalproject-team-6/assets/sprites-BC2IQxlo.svg#close"></use>
+      </svg>
+    </button>
+    <form class="add-rating-form" method="post">
+      <p class="add-rating-title">Rating</p>
+
+      <div class="add-rating-stars">
+        <span class="add-rating-value">0</span>
+        <label class="star-radio-btn">
+          <input
+            type="radio"
+            name="radio"
+            class="add-rating-radio-btn visually-hidden"
+            value="1"
+          />
+          <svg class="icon icon-modal-rating-star" width="24" height="24">
+            <use href="/goit-js-finalproject-team-6/assets/sprites-BC2IQxlo.svg#star"></use>
+          </svg>
+        </label>
+        <label class="star-radio-btn">
+          <input
+            type="radio"
+            name="radio"
+            class="add-rating-radio-btn visually-hidden"
+            value="2"
+          />
+          <svg class="icon icon-modal-rating-star" width="24" height="24">
+            <use href="/goit-js-finalproject-team-6/assets/sprites-BC2IQxlo.svg#star"></use>
+          </svg>
+        </label>
+        <label class="star-radio-btn">
+          <input
+            type="radio"
+            name="radio"
+            class="add-rating-radio-btn visually-hidden"
+            value="3"
+          />
+          <svg class="icon icon-modal-rating-star" width="24" height="24">
+            <use href="/goit-js-finalproject-team-6/assets/sprites-BC2IQxlo.svg#star"></use>
+          </svg>
+        </label>
+        <label class="star-radio-btn">
+          <input
+            type="radio"
+            name="radio"
+            class="add-rating-radio-btn visually-hidden"
+            value="4"
+          />
+          <svg class="icon icon-modal-rating-star" width="24" height="24">
+            <use href="/goit-js-finalproject-team-6/assets/sprites-BC2IQxlo.svg#star"></use>
+          </svg>
+        </label>
+        <label class="star-radio-btn">
+          <input
+            type="radio"
+            name="radio"
+            class="add-rating-radio-btn visually-hidden"
+            value="5"
+          />
+          <svg class="icon icon-modal-rating-star" width="24" height="24">
+            <use href="/goit-js-finalproject-team-6/assets/sprites-BC2IQxlo.svg#star"></use>
+          </svg>
+        </label>
+      </div>
+
+      <input
+        type="email"
+        class="input-modal add-rating-email"
+        name="email"
+        id="email"
+        pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+        placeholder="Email"
+        required
+      />
+      <textarea
+        name="comment"
+        id="comment"
+        class="input-modal add-rating-comment"
+        placeholder="Your comment"
+        required
+      ></textarea>
+      <button type="submit" class="btn-modal-filled btn-add-rating-submit">
+        Send
+      </button>
+    </form>
+  </div>
+</div>
+
+
 
 
   </body>

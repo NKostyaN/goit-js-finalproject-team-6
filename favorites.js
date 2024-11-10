@@ -1,31 +1,31 @@
-import{g as h,r as v,i as l,a as x}from"./assets/nav-Cdqq0ghY.js";import"./assets/vendor-CNNbG8jS.js";async function m(){const t=new Date().getDate();let r=JSON.parse(localStorage.getItem("quoteData"))??{};const s=r.day??0;if(t!==s){const i=await serviceQuote();i.day=t,localStorage.setItem("quoteData",JSON.stringify(i)),r=i}const o=document.querySelector(".quote-text"),c=document.querySelector(".quote-author");o.textContent=r.quote,c.textContent=r.author}m();const a={galleryList:document.querySelector(".gallery-list"),defaultText:document.querySelector(".js-hidden-text")};async function w(e){return await Promise.all(e.map(async r=>await x.exerciseInfo(r)))}async function q(e){return w(e).then(t=>t.map(({_id:r,bodyPart:s,burnedCalories:o,target:c,name:i,time:f})=>`<li data-id="${r}" class="exercise-card">
+import{g as p,r as f,a as i,b as h}from"./assets/nav-LYMWQTkt.js";import"./assets/vendor-CNNbG8jS.js";async function v(){const t=new Date().getDate();let s=JSON.parse(localStorage.getItem("quoteData"))??{};const a=s.day??0;if(t!==a){const n=await serviceQuote();n.day=t,localStorage.setItem("quoteData",JSON.stringify(n)),s=n}const o=document.querySelector(".quote-text"),c=document.querySelector(".quote-author");o.textContent=s.quote,c.textContent=s.author}v();const r={galleryList:document.querySelector(".gallery-list"),defaultText:document.querySelector(".js-hidden-text")};async function x(e){return await Promise.all(e.map(async s=>await h.exerciseInfo(s)))}async function m(e){return x(e).then(t=>t.map(({_id:s,bodyPart:a,burnedCalories:o,target:c,name:n,time:g})=>`<li data-id="${s}" class="exercise-card">
                   <div class="exercise-header">
                     <div class="exercise-trash">
                       <p class="workout">WORKOUT</p>
                     <button class="trash-btn" type="submit">
                     <svg class="trash-svg"  width="16" height="16">
-                          <use id = "dell" href="${l}#icon-trash-fav"></use>
+                          <use id = "dell" href="${i}#icon-trash-fav"></use>
                           </svg> 
                     </button>              
                     </div>    
                       <button id = "open" class="exercise-btn" type="button">Start
                         <svg id = "arrow" class="arrow-svg" width="16" height="16">
-                          <use href="${l}#icon-arrow"></use>
+                          <use href="${i}#icon-arrow"></use>
                         </svg>
                       </button>
                   </div>  
                     <div class = "exercise-tittle"> 
                     <div class= "man-svg-thumb">
                       <svg width="24" height="24">
-                        <use href="${l}#icon-icon-2"></use>
+                        <use href="${i}#icon-icon-2"></use>
                       </svg>
                       </div>
-                      <p class="favorite-exercise-name">${d(i)}</p>
+                      <p class="favorite-exercise-name">${l(n)}</p>
                     </div> 
                     <div class="exercise-information">
-                      <p class="exercise-category">Burned calories: <span>${o}/${f}min</span></p>
-                      <p class="exercise-category">Body part: <span>${d(s)}</span></p>
-                      <p class="exercise-category">Target: <span>${d(c)}</span></p>
+                      <p class="exercise-category">Burned calories: <span>${o}/${g}min</span></p>
+                      <p class="exercise-category">Body part: <span>${l(a)}</span></p>
+                      <p class="exercise-category">Target: <span>${l(c)}</span></p>
                     </div>            
-                </li>`).join(""))}function y(e){q(e).then(t=>{a.galleryList.innerHTML="",a.galleryList.insertAdjacentHTML("beforeend",t),a.defaultText.style.display="none",a.galleryList.style.display="flex";const r=document.querySelectorAll(".exercise-card");for(let s of r)s.addEventListener("click",p);e.length===0&&(a.defaultText.style.display="flex",a.galleryList.style.display="none")},t=>{console.log(t)})}let n=7;window.addEventListener("resize",u);function u(){let e=h();window.innerWidth>=768&&(n=10),window.innerWidth>=1440&&(n=6),y(e.slice(0,n)),makePaginationByItems(n,e.length).on("afterMove",({page:t})=>{let r=(t-1)*n,s=t*n;y(e.slice(r,s))})}u();const S=document.querySelectorAll(".exercise-card");for(let e of S)e.addEventListener("click",p);async function p(e){switch(e.target.id){case"dell":return b(e);case"open":return g(e);case"arrow":return g(e)}}function b(e){const t=e.currentTarget.dataset.id;v(t),u()}async function g(e){e.currentTarget.dataset.id}function d(e){return e[0].toUpperCase()+e.slice(1)}
+                </li>`).join(""))}function w(e){m(e).then(t=>{r.galleryList.innerHTML="",r.galleryList.insertAdjacentHTML("beforeend",t),r.defaultText.style.display="none",r.galleryList.style.display="flex";const s=document.querySelectorAll(".exercise-card");for(let a of s)a.addEventListener("click",y);e.length===0&&(r.defaultText.style.display="flex",r.galleryList.style.display="none")},t=>{console.log(t)})}window.addEventListener("resize",d);function d(){let e=p();w(e)}d();const q=document.querySelectorAll(".exercise-card");for(let e of q)e.addEventListener("click",y);async function y(e){switch(e.target.id){case"dell":return S(e);case"open":return u(e);case"arrow":return u(e)}}function S(e){const t=e.currentTarget.dataset.id;f(t),d()}async function u(e){e.currentTarget.dataset.id}function l(e){return e[0].toUpperCase()+e.slice(1)}
 //# sourceMappingURL=favorites.js.map
