@@ -41,7 +41,7 @@ export function renderExercises(exercises) {
 
   exercises.forEach(exercise => {
     const exerciseElement = document.createElement('div');
-    exerciseElement.classList.add('exercises__col');
+    exerciseElement.classList.add('exercises-md-col-4');
 
     exerciseElement.innerHTML = `
       <div class="exercises__item">

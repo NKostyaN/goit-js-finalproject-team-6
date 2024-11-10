@@ -1,27 +1,26 @@
-.quotes > *{
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 16px;
+.quotes{
+  margin-block: 80px;
+  gap: 20px 0;
+}
+
+.quote-of-day {
   background: var(--color-black);
-  border-radius: 20px;
-  margin: 0 auto;
 }
 
 .quote-news {
-  background-color: #fff;
+  background: white;
 }
 
 .quote-of-day,
-.quote-image,
 .quote-news {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  width: 100%;
+  gap: 0 16px;
+  height: 100%;
+  padding: 16px;
+  border-radius: 20px;
 }
+
 .quote-image {
-  background: none;
   padding: 0;
 }
 
@@ -29,6 +28,7 @@
   width: 34px;
   height: 34px;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   background: var(--color-rating);
@@ -89,45 +89,39 @@
   color: var(--color-white);
 }
 
-.quote-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-}
-
 .quote-image-img {
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
 }
 
+.quote-image-img img, .quote-image-img picture, .quote-image-img source{
+  width: 100%;
+}
+
 /* Tablet Styles */
 @media (min-width: 768px) {
-  .quotes {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 32px;
-  }
-
-  .quote-of-day,
-  .quote-image,
-  .quote-news {
-    flex: 1 1 calc(50% - 16px);
-    max-width: calc(50% - 16px);
+  .quotes{
+    gap: 32px 0;
   }
 
   .quote-title,
   .quote-news-title {
     font-size: 24px;
   }
+
+  .quote-of-day,
+  .quote-news{
+    padding: 32px;
+  }
 }
 
 /* Desktop Styles */
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   .quotes {
     flex-direction: column;
     max-width: 444px;
+    margin-block-start: 0;
   }
 
   .quote-of-day,
