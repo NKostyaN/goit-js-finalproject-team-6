@@ -1,54 +1,54 @@
-.main-container{
+.main-container {
   margin-bottom: 80px;
 }
 
 @media (min-width: 768px) {
-  .main-container{
+  .main-container {
     margin-bottom: 100px;
   }
 }
 
 @media (min-width: 1440px) {
-  .main-container{
+  .main-container {
     margin-bottom: 132px;
   }
 }
 
 /********************** Breadcrumbs and Filters section **********************/
-.breadcrumbs{
+.breadcrumbs {
   display: inline-flex;
 }
 
-.breadcrumbs h3{
+.breadcrumbs h3 {
   font-size: 2.75rem;
   line-height: 3rem;
   font-weight: 400;
   margin-bottom: 0;
 }
 
-.exercises-filters{
+.exercises-filters {
   display: flex;
   color: #24242499;
   margin-top: 32px;
 }
 
-.exercises-filters li{
+.exercises-filters li {
   padding: 8px 0px;
   cursor: pointer;
   margin-inline-end: 20px;
 }
 
-.exercises-filters li:last-child{
+.exercises-filters li:last-child {
   margin-inline-end: 0;
 }
 
-.exercises-filters li.exercises-filters__selected{
+.exercises-filters li.exercises-filters__selected {
   color: var(--color-black);
   position: relative;
   cursor: default;
 }
 
-.exercises-filters li.exercises-filters__selected::after{
+.exercises-filters li.exercises-filters__selected::after {
   content: '';
   display: block;
   position: absolute;
@@ -60,27 +60,27 @@
   width: 100%;
 }
 
-.exercises-mb_20{
+.exercises-mb_20 {
   margin-bottom: 20px;
 }
 
-.exercises-filters{
+.exercises-filters {
   margin-top: 20px;
 }
 
 @media (min-width: 1440px) {
-  .exercises-filters{
+  .exercises-filters {
     margin-top: 0;
   }
 }
 /********************** End of Breadcrumbs and Filters section **********************/
 
 /********************** Exercises section **********************/
-.exercises{
+.exercises {
   gap: 32px 0;
 }
 
-.exercises__item{
+.exercises__item {
   position: relative;
   border-radius: 24px;
   overflow: hidden;
@@ -114,31 +114,31 @@
   line-height: 1.25rem;
   margin-bottom: 6px;
   font-weight: 400;
-  color: #F4F4F4;
+  color: #f4f4f4;
   text-transform: capitalize;
 }
 
-.exercises__item .text-overlay p{
+.exercises__item .text-overlay p {
   font-size: 0.75rem;
   line-height: 1.125rem;
   color: rgba(244, 244, 244, 0.4);
 }
 
-.exercises-pagination{
+.exercises-pagination {
   margin-top: 2rem;
   font-size: 1.5rem;
   line-height: 2rem;
-  color: #D4D4D4;
+  color: #d4d4d4;
   display: flex;
   justify-content: center;
   font-weight: 400;
 }
 
-.exercises-pagination ul{
+.exercises-pagination ul {
   display: flex;
 }
 
-.exercises-pagination li{
+.exercises-pagination li {
   width: 32px;
   height: 32px;
   display: inline-flex;
@@ -149,7 +149,7 @@
   cursor: pointer;
 }
 
-.exercises-pagination li.exercises-pagination__current{
+.exercises-pagination li.exercises-pagination__current {
   color: var(--color-black);
   border-color: var(--color-black);
   cursor: default;
@@ -163,20 +163,20 @@
 }
 
 @media (min-width: 1440px) {
-  .exercises-filters{
+  .exercises-filters {
     justify-content: flex-end;
   }
 }
 /********************** End of Exercises section **********************/
 
 /********************** Common classes **********************/
-.exercises-row{
+.exercises-row {
   display: flex;
   flex-wrap: wrap;
   margin-inline: -0.5rem;
 }
 
-.exercises-row--jsb{
+.exercises-row--jsb {
   justify-content: space-between;
 }
 
@@ -187,12 +187,12 @@
   padding-inline: 0.5rem;
 }
 
-.w-full{
+.w-full {
   width: 100%;
 }
 
 @media (min-width: 768px) {
-  .exercises-md-col-4{
+  .exercises-md-col-4 {
     flex: 0 0 auto;
     width: 33.33333333%;
   }
@@ -207,32 +207,32 @@
     width: 50%;
   }
 
-  .exercises-md-col-7{
+  .exercises-md-col-7 {
     flex: 0 0 auto;
     width: 58.33333333%;
   }
 }
 
 @media (min-width: 1440px) {
-  .order-xl-1{
+  .order-xl-1 {
     order: 1;
   }
 
-  .exercises-xl-col-12{
+  .exercises-xl-col-12 {
     flex: 0 0 auto;
     width: 100%;
   }
 
-  .exercises-col-xl-auto{
+  .exercises-col-xl-auto {
     flex: 0 0 auto;
     width: auto;
   }
 
-  .exercises-col-xl{
+  .exercises-col-xl {
     flex: 1 0 0%;
   }
 
-  .me-xl-16{
+  .me-xl-16 {
     margin-inline-end: 0.5rem;
   }
 }
@@ -287,12 +287,15 @@
 }
 
 .exercise-name {
+  white-space: nowrap;
+  overflow: hidden;
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
+  text-overflow: ellipsis;
 }
 
-.exercise-info{
+.exercise-info {
   display: flex;
   gap: 0 10px;
   flex-wrap: wrap;
@@ -309,17 +312,17 @@
   text-decoration-skip-ink: none;
 }
 
-.exercise-info-title{
+.exercise-info-title {
   font-size: 12px;
   line-height: 18px;
-  color: rgba(36, 36, 36, 0.4)
+  color: rgba(36, 36, 36, 0.4);
 }
 
 .truncate-text {
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: '..';
+  text-overflow: ellipsis;
   display: inline-block;
-  max-width: 180px; 
+  max-width: 180px;
   vertical-align: bottom;
 }
