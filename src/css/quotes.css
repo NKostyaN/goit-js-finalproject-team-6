@@ -91,7 +91,7 @@
 }
 
 .quote-image {
-  display: block;
+  /* display: block; */
   width: 100%;
   height: auto;
   margin: 0 auto;
@@ -106,14 +106,14 @@
 /* Tablet Styles */
 @media (min-width: 768px) {
   .quotes {
-    flex-direction: row;
     flex-wrap: wrap;
-    gap: 32px;
+    flex-direction: row;
+    gap: 16px;
   }
 
-  .quote-of-day,
-  .quote-image,
-  .quote-news {
+  .quote-of-day.container,
+  .quote-image.container,
+  .quote-news.container {
     flex: 1 1 calc(50% - 16px);
     max-width: calc(50% - 16px);
   }
@@ -126,8 +126,9 @@
 
 /* Desktop Styles */
 @media (min-width: 1200px) {
-  .quotes {
-    flex-direction: column;
+  .quotes .container {
+    /* flex-direction: column; */
+    flex: 1 0 100%;
     max-width: 444px;
   }
 
