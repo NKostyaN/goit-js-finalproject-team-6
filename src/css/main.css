@@ -17,13 +17,26 @@
 /********************** Breadcrumbs and Filters section **********************/
 .breadcrumbs{
   display: inline-flex;
+  color: #24242480;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
-.breadcrumbs h3{
+.breadcrumbs h3, .breadcrumbs span{
   font-size: 2.75rem;
   line-height: 3rem;
   font-weight: 400;
   margin-bottom: 0;
+  color: var(--color-black);
+}
+
+.breadcrumbs li{
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumbs span{
+  margin-inline: 10px;
 }
 
 .exercises-filters{
@@ -85,6 +98,7 @@
   border-radius: 24px;
   overflow: hidden;
   max-height: 216px;
+  cursor: pointer;
 }
 
 .exercises__item picture,
