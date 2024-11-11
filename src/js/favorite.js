@@ -2,8 +2,7 @@ import icons from '../img/icons/sprites.svg';
 import { getFavorites, toggleFavorite } from './storage.js';
 import { api } from './api.js';
 import * as utils from './utils.js';
-// import axios from 'axios';
-// import { initModalListeners } from './modal';
+import { initModalListeners } from './modal.js';
 
 async function renderQuote() {
   function serviceQuote() {
@@ -61,37 +60,41 @@ async function createExerciseCards(exercises) {
       .map(
         ({ _id, bodyPart, burnedCalories, target, name, time }) =>
           `<li data-id="${_id}" class="exercise-card">
-            <div class="exercise-header">
-              <div class="exercise-trash">
-                <p class="exercise-workout">WORKOUT</p>
-                <button class="trash-btn" type="submit">
-                  <svg class="trash-svg"  width="16" height="16">
-                    <use id = "dell" href="${icons}#icon-trash-fav"></use>
-                  </svg> 
-                </button> 
-              </div>
-              <button id = "open" class="exercise-btn" type="button">
-                Start
-                <svg class="exercise-arrow" width="13" height="13">
-                  <use href="${icons}#icon-start-arrow"></use>
-                </svg>
-              </button>
-            </div>
-            <h3 class="exercise-name">
-              <svg class="exercise-name-icon" width="24" height="24">
-                <use href="${icons}#icon-icon-2"></use>
-              </svg>${utils.capitalize(name)}</h3>
-            <div class="exercise-info">
-              <p class="truncate-text"><strong class="exercise-info-title">Burned calories:</strong> ${burnedCalories}/${time}min</p>
-              <p class="truncate-text"><strong class="exercise-info-title">Body part:</strong> ${utils.capitalize(
-                bodyPart
-              )}</p>
-              <p class="truncate-text"><strong class="exercise-info-title">Target:</strong> ${utils.capitalize(
-                target
-              )}</p>
-            </div>
-          </li>
-          `
+                  <div class="exercise-header">
+                    <div class="exercise-trash">
+                      <p class="workout">WORKOUT</p>
+                    <button id="dell" class="trash-btn" type="submit">
+                    <svg class="trash-svg"  width="16" height="16">
+                          <use  href="${icons}#icon-trash-fav"></use>
+                          </svg> 
+                    </button>              
+                    </div>    
+                      <button class="exercise-btn" type="button" data-modal-open value="${_id}">Start
+                        <svg  class="arrow-svg" width="16" height="16">
+                          <use href="${icons}#icon-arrow"></use>
+                        </svg>
+                      </button>
+                  </div>  
+                    <div class = "exercise-tittle"> 
+                    <div class= "man-svg-thumb">
+                      <svg width="24" height="24">
+                        <use href="${icons}#icon-icon-2"></use>
+                      </svg>
+                      </div>
+                      <p class="favorite-exercise-name">${utils.capitalize(
+                        name
+                      )}</p>
+                    </div> 
+                    <div class="exercise-information">
+                      <p class="exercise-category">Burned calories: <span>${burnedCalories}/${time}min</span></p>
+                      <p class="exercise-category">Body part: <span>${utils.capitalize(
+                        bodyPart
+                      )}</span></p>
+                      <p class="exercise-category">Target: <span>${utils.capitalize(
+                        target
+                      )}</span></p>
+                    </div>            
+                </li>`
       )
       .join('');
   });
@@ -108,13 +111,15 @@ function renderExercises(exercises) {
 
       const cardsEl = document.querySelectorAll('.exercise-card');
       for (let card of cardsEl) {
-        card.addEventListener('click', handleCardClick);
+        card.querySelector('#dell').addEventListener('click', removeCard);
       }
 
       if (exercises.length === 0) {
         Refs.defaultText.style.display = 'flex';
         Refs.galleryList.style.display = 'none';
       }
+
+      initModalListeners();
     },
     error => {
       console.log(error); // "Error! Error passed to reject function"
@@ -123,41 +128,15 @@ function renderExercises(exercises) {
 }
 
 window.addEventListener('resize', renderCards);
-function renderCards() {
+async function renderCards() {
   let exercises = getFavorites();
-
-  renderExercises(exercises);
+  await renderExercises(exercises);
 }
 
 renderCards();
 
-const cards = document.querySelectorAll('.exercise-card');
-
-for (let card of cards) {
-  card.addEventListener('click', handleCardClick);
-}
-
-async function handleCardClick(event) {
-  switch (event.target.id) {
-    case 'dell':
-      return removeCard(event);
-    case 'open':
-      return openCard(event);
-    case 'arrow':
-      return openCard(event);
-  }
-}
-
 function removeCard(event) {
-  const id = event.currentTarget.dataset.id;
+  const id = document.querySelector('.exercise-card').dataset.id;
   toggleFavorite(id);
   renderCards();
-}
-
-async function openCard(event) {
-  const id = event.currentTarget.dataset.id;
-}
-
-function capitalize(s) {
-  return s[0].toUpperCase() + s.slice(1);
 }

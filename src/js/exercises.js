@@ -3,6 +3,17 @@ import { initModalListeners } from './modal.js';
 import { api } from './api.js';
 import * as utils from './utils.js';
 
+const VIEW_TYPE = 'data-view-type';
+const VIEW_TYPES = {
+  exercises: 'exercises',
+  details: 'details',
+};
+
+const SEARCH_ATTR = {
+  filter: 'filter',
+  name: 'name',
+};
+
 export function initializeExercises() {
   loadExercises();
   initializeFilters();
@@ -42,7 +53,12 @@ export async function loadExercises(
 // Function for rendering data
 export function renderExercises(exercises) {
   const container = document.getElementById('exercises-container');
+  container.setAttribute(VIEW_TYPE, VIEW_TYPES.exercises);
   container.innerHTML = '';
+
+  const searchContainer = document.getElementById('search-container');
+  searchContainer.removeAttribute(SEARCH_ATTR.filter);
+  searchContainer.removeAttribute(SEARCH_ATTR.name);
 
   exercises.forEach(exercise => {
     const exerciseElement = document.createElement('div');
@@ -60,24 +76,25 @@ export function renderExercises(exercises) {
 
     exerciseElement.addEventListener('click', async () => {
       handleExerciseClick(exerciseElement);
-
-      const data = await fetchExerciseDetailsPage(
-        exercise.filter,
-        exercise.name,
-        1
-      );
-      processExerciseDetails(exercise, data.results);
+      processExerciseDetails(exercise);
     });
 
     container.appendChild(exerciseElement);
   });
+
+  initSearch();
 }
 
-function processExerciseDetails(exercise, exercises, { skipSearchInit } = {}) {
-  renderExerciseDetailsPage(exercises);
+async function processExerciseDetails({ filter, name, keyword, page }) {
+  const exercises = (
+    await fetchExerciseDetailsPage(filter, name, page ?? 1, keyword)
+  ).results;
+  renderExerciseDetailsPage({
+    filter,
+    name,
+    exercises,
+  });
   initModalListeners();
-  if (skipSearchInit) return;
-  initSearch(exercise);
 }
 
 export function handleExerciseClick(exerciseElement) {
@@ -107,11 +124,14 @@ export function handleExerciseClick(exerciseElement) {
   }
 }
 
-function renderExerciseDetailsPage(exercises) {
+function renderExerciseDetailsPage({ exercises, filter, name }) {
   const searchContainer = document.getElementById('search-container');
+  searchContainer.setAttribute(SEARCH_ATTR.filter, filter);
+  searchContainer.setAttribute(SEARCH_ATTR.name, name);
   searchContainer.style.display = 'flex';
 
   const container = document.getElementById('exercises-container');
+  container.setAttribute(VIEW_TYPE, VIEW_TYPES.details);
   container.innerHTML = '';
 
   exercises.forEach(exerciseDetail => {
@@ -217,6 +237,7 @@ export function createPagination(
     '.exercises-pagination ul'
   );
   paginationContainer.innerHTML = ''; // Clear pagination container
+  const container = document.getElementById('exercises-container');
 
   for (let i = 1; i <= totalPages; i++) {
     const pageItem = document.createElement('li');
@@ -235,35 +256,46 @@ export function createPagination(
       });
       pageItem.classList.add('exercises-pagination__current');
 
-      // Load data for the selected page
-      loadExercises(filter, i, limit);
+      switch (container.getAttribute(VIEW_TYPE)) {
+        case VIEW_TYPES.exercises: {
+          loadExercises(filter, i, limit);
+          break;
+        }
+        case VIEW_TYPES.details: {
+          processDetailsSearch({ page: i });
+          break;
+        }
+      }
     });
 
     paginationContainer.appendChild(pageItem);
   }
 }
 
-function initSearch(exercise) {
+function initSearch() {
   const search = document.querySelector('.search-button');
   const input = document.querySelector('#search-input');
+  input.value = '';
 
-  async function processSearch(keyword) {
-    const data = await fetchExerciseDetailsPage(
-      exercise.filter,
-      exercise.name,
-      1,
-      keyword
-    );
-    processExerciseDetails(exercise, data.results, { skipSearchInit: true });
-  }
-
-  search.addEventListener('click', async event => processSearch(input.value));
+  search.addEventListener('click', async event =>
+    processDetailsSearch({ keyword: input.value })
+  );
 
   let timeout;
   input.addEventListener('input', event => {
     if (timeout) {
       clearTimeout(timeout);
     }
-    timeout = setTimeout(() => processSearch(event.target.value), 500);
+    timeout = setTimeout(
+      () => processDetailsSearch({ keyword: event.target.value }),
+      500
+    );
   });
+}
+
+async function processDetailsSearch({ keyword, page }) {
+  const searchContainer = document.getElementById('search-container');
+  const filter = searchContainer.getAttribute(SEARCH_ATTR.filter);
+  const name = searchContainer.getAttribute(SEARCH_ATTR.name);
+  processExerciseDetails({ filter, name, keyword, page });
 }

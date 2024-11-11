@@ -9,6 +9,7 @@ export function getFavorites() {
 }
 
 export function toggleFavorite(exerciseId) {
+  if (!exerciseId) return;
   const favorites = getFavorites();
   const index = favorites.indexOf(exerciseId);
 
