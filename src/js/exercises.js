@@ -247,6 +247,8 @@ function initSearch(exercise) {
   const search = document.querySelector('.search-button');
   const input = document.querySelector('#search-input');
 
+  input.value = '';
+
   async function processSearch(keyword) {
     const data = await fetchExerciseDetailsPage(
       exercise.filter,
