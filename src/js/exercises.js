@@ -1,30 +1,32 @@
-import axios from 'axios';
 import { initModalListeners } from './modal.js';
+import { api } from './api.js';
 import * as utils from './utils.js';
 
-// Loading data from API
-export async function loadExercises(filter = 'Muscles', page = 1, limit = 12) {
-  try {
-    // Change coded space `%20` to usual space
-    const decodedFilter = filter.replace(/%20/g, ' ');
+export function initializeExercises() {
+  loadExercises();
+  initializeFilters();
+}
 
-    // API request
-    const response = await axios.get(
-      `https://your-energy.b.goit.study/api/filters`,
-      {
-        params: {
-          filter: decodedFilter,
-          page,
-          limit,
-        },
-      }
-    );
+// Loading data from API
+export async function loadExercises(
+  filter = 'Muscles',
+  page = 1,
+  limit = 12,
+  keyword
+) {
+  try {
+    const response = await api.searchExercises({
+      filter,
+      page,
+      limit,
+      keyword,
+    });
 
     // Get results from response
-    const exercises = response.data.results;
+    const exercises = response.results;
 
     // Use totalPages directly from response
-    const totalPages = response.data.totalPages;
+    const totalPages = response.totalPages;
 
     // Data render
     renderExercises(exercises);
@@ -58,16 +60,23 @@ export function renderExercises(exercises) {
     exerciseElement.addEventListener('click', async () => {
       handleExerciseClick(exerciseElement);
 
-      const dataFilter = exercise.filter;
-      const dataName = exercise.name;
-
-      const data = await fetchExerciseDetailsPage(dataFilter, dataName, 1);
-      renderExerciseDetailsPage(data.results);
-      initModalListeners();
+      const data = await fetchExerciseDetailsPage(
+        exercise.filter,
+        exercise.name,
+        1
+      );
+      processExerciseDetails(exercise, data.results);
     });
 
     container.appendChild(exerciseElement);
   });
+}
+
+function processExerciseDetails(exercise, exercises, { skipSearchInit } = {}) {
+  renderExerciseDetailsPage(exercises);
+  initModalListeners();
+  if (skipSearchInit) return;
+  initSearch(exercise);
 }
 
 export function handleExerciseClick(exerciseElement) {
@@ -147,29 +156,21 @@ function renderExerciseDetailsPage(exercises) {
   });
 }
 
-async function fetchExerciseDetailsPage(filter, name, page = 1) {
+async function fetchExerciseDetailsPage(filter, name, page = 1, keyword) {
   let filterCamelCase = filter.toLowerCase().replace(/\s+/g, '');
 
   if (filterCamelCase.endsWith('ts')) {
     filterCamelCase = filterCamelCase.slice(0, -1);
   }
 
-  const encodedName = encodeURIComponent(name);
-
-  const url = `https://your-energy.b.goit.study/api/exercises?${filterCamelCase}=${encodedName}&page=${page}&limit=10`;
-
-  //console.log('Запитуваний URL:', url); // Лог для перевірки URL
-
-  try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error('Помилка завантаження даних');
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Помилка при запиті до API:', error);
-    return { results: [] };
-  }
+  return api.exerciseDetails({
+    page,
+    limit: 10,
+    keyword,
+    custom: {
+      [filterCamelCase]: encodeURIComponent(name),
+    },
+  });
 }
 
 export function initializeFilters() {
@@ -228,4 +229,18 @@ export function createPagination(
 
     paginationContainer.appendChild(pageItem);
   }
+}
+
+function initSearch(exercise) {
+  const search = document.querySelector('.search-button');
+  const input = document.querySelector('#search-input');
+  search.addEventListener('click', async event => {
+    const data = await fetchExerciseDetailsPage(
+      exercise.filter,
+      exercise.name,
+      1,
+      input.value
+    );
+    processExerciseDetails(exercise, data.results, { skipSearchInit: true });
+  });
 }

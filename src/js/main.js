@@ -1,5 +1,4 @@
-import { loadExercises, initializeFilters } from './exercises.js';
+import { initializeExercises } from './exercises.js';
 
 // Default init exercises
-loadExercises();
-initializeFilters();
+initializeExercises();
