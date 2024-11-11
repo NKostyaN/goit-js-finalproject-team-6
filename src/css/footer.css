@@ -159,6 +159,7 @@
   color: var(--color-text-secondary);
   font-size: 14px;
   line-height: 1.285;
+  outline: none;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
