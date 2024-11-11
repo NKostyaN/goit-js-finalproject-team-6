@@ -228,13 +228,24 @@ export function createPagination(
 function initSearch(exercise) {
   const search = document.querySelector('.search-button');
   const input = document.querySelector('#search-input');
-  search.addEventListener('click', async event => {
+
+  async function processSearch(keyword) {
     const data = await fetchExerciseDetailsPage(
       exercise.filter,
       exercise.name,
       1,
-      input.value
+      keyword
     );
     processExerciseDetails(exercise, data.results, { skipSearchInit: true });
+  }
+
+  search.addEventListener('click', async event => processSearch(input.value));
+
+  let timeout;
+  input.addEventListener('input', event => {
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+    timeout = setTimeout(() => processSearch(event.target.value), 500);
   });
 }
