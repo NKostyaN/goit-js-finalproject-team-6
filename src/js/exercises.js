@@ -55,6 +55,8 @@ export function renderExercises(exercises) {
     `;
 
     exerciseElement.addEventListener('click', async () => {
+      handleExerciseClick(exerciseElement);
+
       const dataFilter = exercise.filter;
       const dataName = exercise.name;
 
@@ -67,7 +69,36 @@ export function renderExercises(exercises) {
   });
 }
 
+export function handleExerciseClick(exerciseElement) {
+  const exerciseName =
+    exerciseElement.querySelector('.text-overlay h5').textContent;
+
+  const breadcrumbs = document.querySelector('.breadcrumbs');
+
+  let separator = breadcrumbs.querySelector('span');
+  if (!separator) {
+    separator = document.createElement('span');
+    separator.textContent = '/';
+  }
+
+  let lastBreadcrumb = breadcrumbs.querySelector('li:last-child');
+
+  if (lastBreadcrumb && lastBreadcrumb !== breadcrumbs.querySelector('li')) {
+    lastBreadcrumb.textContent = '';
+    lastBreadcrumb.appendChild(separator);
+    lastBreadcrumb.appendChild(document.createTextNode(exerciseName));
+  } else {
+    const breadcrumbItem = document.createElement('li');
+    breadcrumbItem.appendChild(separator);
+    breadcrumbItem.appendChild(document.createTextNode(exerciseName));
+    breadcrumbs.appendChild(breadcrumbItem);
+  }
+}
+
 function renderExerciseDetailsPage(exercises) {
+  const searchContainer = document.getElementById('search-container');
+  searchContainer.style.display = 'flex';
+
   const container = document.getElementById('exercises-container');
   container.innerHTML = '';
 
@@ -139,6 +170,9 @@ export function initializeFilters() {
   const filterItems = document.querySelectorAll('.exercises-filters li');
   filterItems.forEach(item => {
     item.addEventListener('click', () => {
+      const searchContainer = document.getElementById('search-container');
+      searchContainer.style.display = 'none';
+
       const selectedFilter = item.id;
 
       // Clean container and using new filter
