@@ -52,6 +52,10 @@
     display: none;
   }
 }
+.burger-menu:hover,
+.burger-menu:focus {
+  background-color: transparent;
+}
 
 .burger-menu-icon {
   top: 0;

@@ -1,18 +1,22 @@
+const FAVORITES_KEY = 'favorites';
+
 export function getFavorites() {
-  return JSON.parse(localStorage.getItem('favorites')) || [];
+  try {
+    return JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
+  } catch (error) {
+    return [];
+  }
 }
 
-export function addToFavorites(exerciseId) {
-  const favorites = getFavorites();
-  favorites.push(exerciseId);
-  localStorage.setItem('favorites', JSON.stringify(favorites));
-}
-
-export function removeFromFavorites(exerciseId) {
+export function toggleFavorite(exerciseId) {
   const favorites = getFavorites();
   const index = favorites.indexOf(exerciseId);
-  if (index !== -1) {
+
+  if (index >= 0) {
     favorites.splice(index, 1);
-    localStorage.setItem('favorites', JSON.stringify(favorites));
+  } else {
+    favorites.push(exerciseId);
   }
+
+  localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
 }

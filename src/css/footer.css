@@ -10,7 +10,7 @@
   margin-bottom: 10px;
 
   @media screen and (min-width: 768px) {
-    margin-bottom: 16;
+    margin-bottom: 16px;
   }
 }
 /* #endregion General */
@@ -187,6 +187,8 @@
   background-color: var(--color-white);
   font-size: 14px;
   line-height: 1.285;
+  transition: var(--trns);
+  transition-property: color, background-color;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;

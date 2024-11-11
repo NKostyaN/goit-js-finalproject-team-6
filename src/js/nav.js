@@ -1,18 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const currentPage = window.location.pathname;
   const navLinks = document.querySelectorAll('.nav-link');
 
+  const currentPath = window.location.pathname;
+
   navLinks.forEach(link => {
-    if (
-      currentPage.includes('index.html') &&
-      link.getAttribute('href').includes('index.html')
-    ) {
-      link.classList.add('active');
-    } else if (
-      currentPage.includes('favorites.html') &&
-      link.getAttribute('href').includes('favorites.html')
-    ) {
+    if (link.getAttribute('href') === '.' + currentPath) {
       link.classList.add('active');
     }
   });
+
+  if (!document.querySelector('.nav-link.active')) {
+    navLinks[0].classList.add('active');
+  }
 });

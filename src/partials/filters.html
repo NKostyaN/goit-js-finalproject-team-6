@@ -1,5 +1,5 @@
 <section class="container">
-  <div class="exercises-row exercises-row--jsb exercises-mb_20 w-full">
+  <div class="exercises-row justify-space-between exercises-mb_20 w-md-full">
     <div class="exercises-col-xl-auto">
       <ul class="breadcrumbs">
         <li>
@@ -7,7 +7,13 @@
         </li>
       </ul>
     </div>
-    <div class="exercises-col-xl-auto">
+
+    <div class="exercises-md-col-12 exercises-col-xl-auto d-md-flex justify-space-between">
+      <div id="search-container" class="search-container">
+        <input type="text" id="search-input" class="search-input" placeholder="Search" />
+        <button class="search-button" aria-label="Search"></button>
+      </div>
+
       <ul class="exercises-filters">
         <li class="exercises-filters__selected" id="Muscles">Muscles</li>
         <li id="Body%20parts">Body parts</li>

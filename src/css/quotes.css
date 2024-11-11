@@ -1,5 +1,5 @@
-.quotes{
-  margin-block: 80px;
+.quotes {
+  margin-block-start: 80px;
   gap: 20px 0;
 }
 
@@ -91,17 +91,20 @@
 
 .quote-image-img {
   width: 100%;
-  border-radius: 20px;
-  overflow: hidden;
 }
 
-.quote-image-img img, .quote-image-img picture, .quote-image-img source{
+.quote-image-img img,
+.quote-image-img picture,
+.quote-image-img source {
   width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  max-height: 215px;
 }
 
 /* Tablet Styles */
 @media (min-width: 768px) {
-  .quotes{
+  .quotes {
     gap: 32px 0;
   }
 
@@ -111,7 +114,7 @@
   }
 
   .quote-of-day,
-  .quote-news{
+  .quote-news {
     padding: 32px;
   }
 }
