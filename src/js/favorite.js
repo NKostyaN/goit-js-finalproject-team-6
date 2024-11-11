@@ -7,7 +7,17 @@ import { initModalListeners } from './modal';
 
 
 
-async function renderQuote() {
+async function renderQuote() {  function serviceQuote() {
+  const BASE_URL = "https://your-energy.b.goit.study/api";
+  const END_POINT = "quote";
+
+  return fetch(`${BASE_URL}/${END_POINT}`).then((resp) => {
+    if (!resp.ok) {
+      throw new Error(`Fetch error with ${resp.status}: ${resp.statusText}`);
+    }
+    return resp.json();
+  });
+}
     const currentDate = new Date();
     const currentDay = currentDate.getDate();
 
