@@ -1,8 +1,9 @@
 import icons from '../img/icons/sprites.svg';
-import axios from 'axios';
-import { getFavorites, toggleFavorite } from './storage';
-import { api } from './api';
-import { initModalListeners } from './modal';
+import { getFavorites, toggleFavorite } from './storage.js';
+import { api } from './api.js';
+import * as utils from './utils.js'
+// import axios from 'axios';
+// import { initModalListeners } from './modal';
 
 async function renderQuote() {
   const currentDate = new Date();
@@ -70,14 +71,16 @@ async function createExerciseCards(exercises) {
                         <use href="${icons}#icon-icon-2"></use>
                       </svg>
                       </div>
-                      <p class="favorite-exercise-name">${capitalize(name)}</p>
+                      <p class="favorite-exercise-name">${utils.capitalize(
+                        name
+                      )}</p>
                     </div> 
                     <div class="exercise-information">
                       <p class="exercise-category">Burned calories: <span>${burnedCalories}/${time}min</span></p>
-                      <p class="exercise-category">Body part: <span>${capitalize(
+                      <p class="exercise-category">Body part: <span>${utils.capitalize(
                         bodyPart
                       )}</span></p>
-                      <p class="exercise-category">Target: <span>${capitalize(
+                      <p class="exercise-category">Target: <span>${utils.capitalize(
                         target
                       )}</span></p>
                     </div>            
