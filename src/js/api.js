@@ -24,6 +24,9 @@ class Api {
       review,
     });
   }
+  async getQuote() {
+    return this.#get('quote');
+  }
 }
 
 export const api = new Api();

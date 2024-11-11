@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Energy</title>
+    <link rel="icon" type="image/x-icon" href="./img/icons/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;1,9..40,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Energy</title>
-  <link rel="icon" type="image/x-icon" href="./img/icons/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;1,9..40,500&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
-    integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./css/styles.css" />
-</head>
+  <body>
+    <load src="./partials/header.html" />
 
-<body>
-  <load src="./partials/header.html" />
+    <main>
+      <load src="./partials/hero.html" />
+      <load src="./partials/filters.html" />
+      <section class="container main-container">
+        <div class="exercises-row">
+          <load src="./partials/gallery.html" />
+          <load src="./partials/quotes.html" />
+        </div>
+      </section>
+    </main>
 
-  <main>
-    <load src="./partials/hero.html" />
-    <load src="./partials/filters.html" />
-    <section class="container main-container">
-      <div class="exercises-row">
-        <load src="./partials/gallery.html" />
-        <load src="./partials/quotes.html" />
-      </div>
-    </section>
-  </main>
+    <load src="./partials/footer.html" />
 
-  <load src="./partials/footer.html" />
+    <load src="./partials/menu.html" />
+    <load src="./partials/modal.html" />
 
-  <load src="./partials/menu.html" />
-  <load src="./partials/modal.html" />
-
-  <script type="module" src="./js/menu.js"></script>
-  <script type="module" src="./js/nav.js"></script>
-  <script type="module" src="./js/subscribe.js"></script>
-  <script type="module" src="./js/main.js"></script>
-</body>
-
+    <script type="module" src="./js/menu.js"></script>
+    <script type="module" src="./js/nav.js"></script>
+    <script type="module" src="./js/subscribe.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/quote.js"></script>
+  </body>
 </html>
