@@ -263,20 +263,21 @@
   }
 }
 
+
 .exercise-card {
-  width: 100%;
-  margin: 0;
-  padding: 16px;
+  list-style: none;
+  padding: 15px;
   border-radius: 15px;
-  background: #fff;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #fff;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .exercise-card:hover,
 .exercise-card:focus {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 4px 1px var(--color-grey);
 }
 
 @media screen and (min-width: 768px) {
@@ -302,26 +303,17 @@
 }
 
 .exercise-btn {
-  font-family: inherit;
-  font-size: 14px;
-  padding: 0;
-  line-height: 18px;
-  display: inline-flex;
-  justify-content: space-around;
-  align-items: center;
-  min-width: 54px;
+  background: none;
   border: none;
-  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-black);
   cursor: pointer;
-  min-height: 30px;
-  background-color: inherit;
-  transition: font-size 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.exercise-btn:hover,
-.exercise-btn:focus {
-  font-size: 16px;
+.exercise-btn:hover .exercise-arrow,
+.exercise-btn:focus .exercise-arrow {
+  stroke: var(--color-white);
 }
 
 .exercise-header {
@@ -339,11 +331,11 @@
   line-height: 20px;
 }
 
-.exercise-name {
+/* .exercise-name {
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
-}
+} */
 
 @media screen and (min-width: 768px) {
   .favorite-exercise-name {
@@ -370,26 +362,24 @@
 }
 
 .trash-btn {
+  padding: 0;
+  width: 34px;
+  height: 34px;
   margin-left: 8px;
   border: none;
-  text-align: center;
-  cursor: pointer;
   background-color: inherit;
 }
 
 .trash-svg {
-  stroke: black;
+  position: relative;
+  top: 2px;
+  stroke: var(--color-black);
   fill: transparent;
 }
 
-.arrow-svg {
-  stroke: black;
-}
-
-.trash-svg:hover,
-.trash-svg:focus {
-  width: 17px;
-  height: 17px;
+.trash-btn:hover .trash-svg,
+.trash-btn:focus .trash-svg{
+  stroke: var(--color-white);
   cursor: pointer;
 }
 

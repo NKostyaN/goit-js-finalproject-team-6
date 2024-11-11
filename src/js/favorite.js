@@ -3,8 +3,6 @@ import { getFavorites, toggleFavorite } from './storage.js';
 import { api } from './api.js';
 import * as utils from './utils.js';
 import { initModalListeners } from './modal.js';
-// import axios from 'axios';
-// import { initModalListeners } from './modal';
 
 async function renderQuote() {
   function serviceQuote() {
