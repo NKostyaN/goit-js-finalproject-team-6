@@ -8,7 +8,7 @@ class Api {
   async #get(path, { query } = {}) {
     const data = {};
     if (query) {
-      data.params = query;
+      data.params = this.#cleanUpObject(query);
     }
     return (await this.#requester.get(path, data)).data;
   }
@@ -35,7 +35,7 @@ class Api {
   async searchExercises({ filter, page, limit, keyword }) {
     return this.#get('filters', {
       query: {
-        filter: filter.replace(/%20/g, ' '),
+        filter,
         page,
         limit,
         keyword,
@@ -44,18 +44,27 @@ class Api {
   }
 
   async exerciseDetails({ page, limit, keyword, custom }) {
-    if (keyword) {
-      keyword = keyword.replace(/%20/g, ' ');
-    }
+    return await this.#get('exercises', {
+      query: {
+        page,
+        limit,
+        keyword,
+        ...(custom ?? {}),
+      },
+    });
+  }
 
-    const query = {
-      page,
-      limit,
-      keyword,
-      ...(custom ?? {}),
-    };
-
-    return await this.#get('exercises', { query });
+  #cleanUpObject(params = {}) {
+    const cleanParams = {};
+    Object.entries(params).forEach(([key, value]) => {
+      if (value != undefined) {
+        cleanParams[key] = value;
+        if (typeof value === 'string') {
+          cleanParams[key] = value.replace(/%20/g, ' ');
+        }
+      }
+    });
+    return cleanParams;
   }
 }
 
