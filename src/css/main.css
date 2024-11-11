@@ -336,14 +336,14 @@
   align-items: center;
 }
 
-.exercise-header-left{
+.exercise-header-left {
   display: flex;
   gap: 16px;
 }
 
 .exercise-workout {
   background-color: #fff;
-  border: 1px solid #000;
+  border: 1px solid var(--color-black);
   border-radius: 20px;
   padding: 5px 10px;
   font-weight: bold;
@@ -356,8 +356,17 @@
 }
 
 .exercise-rating span {
-  color: #f9a825;
-  margin-left: 2px;
+  position: relative;
+  top: 1px;
+  fill: var(--color-accent);
+  margin-left: 4px;
+}
+
+.exercise-arrow {
+  position: relative;
+  top: 1px;
+  stroke: var(--color-black);
+  margin-left: 9px;
 }
 
 .btn-start {
@@ -365,8 +374,12 @@
   border: none;
   font-size: 1rem;
   font-weight: bold;
-  color: #000;
+  color: var(--color-black);
   cursor: pointer;
+}
+
+.btn-start:hover .exercise-arrow {
+  stroke: var(--color-white);
 }
 
 .exercise-name-icon {
@@ -374,7 +387,7 @@
   margin-right: 16px;
   top: 6px;
   width: 24px;
-  height: 24px;  
+  height: 24px;
 }
 
 .exercise-name {
