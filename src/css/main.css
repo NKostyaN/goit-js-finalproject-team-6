@@ -150,7 +150,12 @@
   border-radius: 24px;
   overflow: hidden;
   max-height: 216px;
+}
+
+.exercises__item:hover {
   cursor: pointer;
+  transform: translate(0px, -2px);
+  box-shadow: 0px 4px 4px 1px var(--color-modal-backdrop);
 }
 
 .exercises__item picture,
@@ -322,6 +327,11 @@
   padding: 15px;
   border-radius: 15px;
   background-color: #fff;
+}
+
+.exercise-item:hover {
+  /* transform: translate(0px, -2px); */
+  box-shadow: 0px 4px 4px 1px var(--color-grey);
 }
 
 .exercise-details__item {
