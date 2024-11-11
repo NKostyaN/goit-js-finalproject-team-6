@@ -175,7 +175,6 @@ function initRatingForm() {
   const openRatingModalButton = document.querySelector(
     SELECTORS.openRatingModalButton
   );
-  let selectedRating = 0;
   document.querySelector(SELECTORS.addRatingValue).textContent = '0';
 
   openRatingModalButton.addEventListener('click', event => {
@@ -196,8 +195,43 @@ function initRatingForm() {
     event.stopImmediatePropagation();
   });
 
+  function loadRatingModal() {
+    const ratingRadioButtons = document.querySelectorAll(
+      SELECTORS.addRatingRadioBtn
+    );
+
+    ratingRadioButtons.forEach(button => {
+      button.addEventListener('click', event => {
+        const rating = Number(event.currentTarget.value);
+        document.querySelector(
+          SELECTORS.addRatingValue
+        ).textContent = `${rating}`;
+        document
+          .querySelectorAll(SELECTORS.iconModalRatingStar)
+          .forEach((star, index) => {
+            star.classList.toggle(CLASS_NAMES.gold, index < rating);
+          });
+        event.stopImmediatePropagation();
+      });
+    });
+  }
+
+  document
+    .querySelector(SELECTORS.ratingForm)
+    .addEventListener('submit', ratingSubmitListener);
+}
+
+async function ratingSubmitListener(event) {
+  event.preventDefault();
+
+  const rate = parseInt(
+    document.querySelector(SELECTORS.addRatingValue).textContent ?? '0'
+  );
+  const form = event.target;
+  const email = form.elements.email.value;
+  const review = form.elements.comment.value;
+
   function clearRatingForm(form) {
-    selectedRating = 0;
     form.elements.email.value = '';
     form.elements.comment.value = '';
     form.elements.radio.forEach(radio => (radio.checked = false));
@@ -207,62 +241,33 @@ function initRatingForm() {
       .forEach(star => star.classList.remove(CLASS_NAMES.gold));
   }
 
-  function loadRatingModal() {
-    const ratingRadioButtons = document.querySelectorAll(
-      SELECTORS.addRatingRadioBtn
-    );
-
-    ratingRadioButtons.forEach(button => {
-      button.addEventListener('click', event => {
-        selectedRating = Number(event.currentTarget.value);
-        document.querySelector(SELECTORS.addRatingValue).textContent =
-          selectedRating;
-        document
-          .querySelectorAll(SELECTORS.iconModalRatingStar)
-          .forEach((star, index) => {
-            star.classList.toggle(CLASS_NAMES.gold, index < selectedRating);
-          });
-        event.stopImmediatePropagation();
+  if (!rate) {
+    notification.info('Choose your rating');
+  } else if (!email) {
+    notification.info('Enter your email');
+  } else if (!review) {
+    notification.info('Leave a comment');
+  } else {
+    try {
+      const nextExercise = await api.setExerciseRating({
+        exerciseId: currentExerciseId,
+        rate,
+        email,
+        review,
       });
-    });
-  }
+      clearRatingForm(form);
+      notification.success('Rating successfully updated');
+      ratingModal.classList.add(CLASS_NAMES.visuallyHidden);
+      exerciseModal.classList.remove(CLASS_NAMES.visuallyHidden);
 
-  const ratingForm = document.querySelector(SELECTORS.ratingForm);
-  ratingForm.addEventListener('submit', async event => {
-    event.preventDefault();
-
-    const form = event.target;
-    const email = form.elements.email.value;
-    const review = form.elements.comment.value;
-
-    if (!selectedRating) {
-      notification.info('Choose your rating');
-    } else if (!email) {
-      notification.info('Enter your email');
-    } else if (!review) {
-      notification.info('Leave a comment');
-    } else {
-      try {
-        const nextExercise = await api.setExerciseRating({
-          exerciseId: currentExerciseId,
-          rate: selectedRating,
-          email,
-          review,
-        });
-        clearRatingForm(form);
-        notification.success('Rating successfully updated');
-        ratingModal.classList.add(CLASS_NAMES.visuallyHidden);
-        exerciseModal.classList.remove(CLASS_NAMES.visuallyHidden);
-
-        updateModalContent(nextExercise);
-      } catch (error) {
-        notification.error(
-          `Error: ${error?.response?.data?.message ?? error.message}`
-        );
-      }
+      updateModalContent(nextExercise);
+    } catch (error) {
+      notification.error(
+        `Error: ${error?.response?.data?.message ?? error.message}`
+      );
     }
-    event.stopImmediatePropagation();
-  });
+  }
+  event.stopImmediatePropagation();
 }
 
 // Open Modal
