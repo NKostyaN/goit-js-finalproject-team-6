@@ -81,8 +81,9 @@ function processExerciseDetails(exercise, exercises, { skipSearchInit } = {}) {
 }
 
 export function handleExerciseClick(exerciseElement) {
-  const exerciseName =
-    exerciseElement.querySelector('.text-overlay h5').textContent;
+  const exerciseName = utils.capitalize(
+    exerciseElement.querySelector('.text-overlay h5').textContent
+  );
 
   const breadcrumbs = document.querySelector('.breadcrumbs');
 
