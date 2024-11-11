@@ -7,11 +7,10 @@
 
 /* Sections style */
 @import url('./header.css');
-@import url('./menu.css');
+@import url('./hero.css');
 @import url('./main.css');
-@import url('./quotes.css');
-/* @import url('./hero.css'); */
-@import url('./modal.css');
-/* @import url('./footer.css'); */
-@import url('./footer.css');
 @import url('./favorite.css');
+@import url('./quotes.css');
+@import url('./menu.css');
+@import url('./modal.css');
+@import url('./footer.css');

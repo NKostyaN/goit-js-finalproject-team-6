@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 document
   .getElementById('subscriptionForm')
   .addEventListener('submit', async function (event) {

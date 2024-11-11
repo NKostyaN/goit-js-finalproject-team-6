@@ -20,29 +20,29 @@
     />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
+
   <body>
     <load src="./partials/header.html" />
 
     <main>
-      <div class="container">
-        <h2 class="main-title">Home page</h2>
-
-        <section>
-          <load src="./partials/quotes.html" />
+      <load src="./partials/hero.html" />
+      <load src="./partials/filters.html" />
+      <section class="container main-container">
+        <div class="exercises-row">
           <load src="./partials/gallery.html" />
-        </section>
-      </div>
+          <load src="./partials/quotes.html" />
+        </div>
+      </section>
     </main>
 
     <load src="./partials/footer.html" />
 
-    <load src="./partials/openModalButton.html" />
     <load src="./partials/menu.html" />
     <load src="./partials/modal.html" />
 
-    <script src="./js/menu.js"></script>
-    <script src="./js/nav.js"></script>
-    <script src="./js/subscribe.js"></script>
+    <script type="module" src="./js/menu.js"></script>
+    <script type="module" src="./js/nav.js"></script>
+    <script type="module" src="./js/subscribe.js"></script>
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/quote.js"></script>
   </body>

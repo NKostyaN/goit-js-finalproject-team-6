@@ -1,6 +1,7 @@
 import iconsPath from '../img/icons/sprites.svg';
 import { api } from './api';
-import { getFavorites, addToFavorites, removeFromFavorites } from './storage';
+import { notification } from './notification';
+import { getFavorites, toggleFavorite } from './storage';
 
 const SELECTORS = {
   closeModalButton: '[data-modal-close]',
@@ -40,15 +41,17 @@ const addToFavoritesButton = document.querySelector(
   SELECTORS.addToFavoritesButton
 );
 
+let currentExerciseId = null;
+
 async function loadModalData(exerciseId) {
-  const exerciseData = await api.exerciseInfo(exerciseId);
+  const exerciseData = await api.exerciseInfo((currentExerciseId = exerciseId));
   updateModalContent(exerciseData);
-  updateFavoriteButtonState(exerciseId);
-  addFavoriteButtonListener(exerciseId);
+  updateFavoriteButtonState();
+  addFavoriteButtonListener();
 
   modalContainer.classList.toggle(CLASS_NAMES.visuallyHidden);
   handleModalOpen();
-  initRatingForm(exerciseId);
+  initRatingForm();
 }
 
 function clearModalContent() {
@@ -102,8 +105,8 @@ function createStatItem(title, value) {
   </li>`;
 }
 
-function updateFavoriteButtonState(exerciseId) {
-  const isFavorite = getFavorites().includes(exerciseId);
+function updateFavoriteButtonState() {
+  const isFavorite = getFavorites().includes(currentExerciseId);
   addToFavoritesButton.classList.toggle(CLASS_NAMES.favAdded, isFavorite);
   document.querySelector(SELECTORS.btnFavText).textContent = isFavorite
     ? 'Remove from favorites'
@@ -114,19 +117,13 @@ function updateFavoriteButtonState(exerciseId) {
     .setAttribute('href', `${iconsPath}#${isFavorite ? 'trash-bin' : 'heart'}`);
 }
 
-function addFavoriteButtonListener(exerciseId) {
+function addFavoriteButtonListener() {
   addToFavoritesButton.addEventListener('click', event => {
     const button = event.currentTarget;
     button.classList.toggle(CLASS_NAMES.favAdded);
 
-    if (button.classList.contains(CLASS_NAMES.favAdded)) {
-      addToFavorites(exerciseId);
-      updateFavoriteButtonState(exerciseId);
-    } else {
-      removeFromFavorites(exerciseId);
-      updateFavoriteButtonState(exerciseId);
-    }
-
+    toggleFavorite(currentExerciseId);
+    updateFavoriteButtonState();
     event.stopImmediatePropagation();
   });
 }
@@ -139,6 +136,7 @@ function handleModalOpen() {
 function handleModalClose() {
   document.removeEventListener('keydown', handleEscapeKey);
   document.body.classList.remove(CLASS_NAMES.modalOpen);
+  currentExerciseId = null;
 }
 
 function handleEscapeKey(event) {
@@ -173,11 +171,12 @@ function checkTapInRect(event, rect) {
   );
 }
 
-function initRatingForm(exerciseId) {
+function initRatingForm() {
   const openRatingModalButton = document.querySelector(
     SELECTORS.openRatingModalButton
   );
   let selectedRating = 0;
+  document.querySelector(SELECTORS.addRatingValue).textContent = '0';
 
   openRatingModalButton.addEventListener('click', event => {
     ratingModal.classList.remove(CLASS_NAMES.visuallyHidden);
@@ -198,6 +197,7 @@ function initRatingForm(exerciseId) {
   });
 
   function clearRatingForm(form) {
+    selectedRating = 0;
     form.elements.email.value = '';
     form.elements.comment.value = '';
     form.elements.radio.forEach(radio => (radio.checked = false));
@@ -236,25 +236,29 @@ function initRatingForm(exerciseId) {
     const review = form.elements.comment.value;
 
     if (!selectedRating) {
-      alert('Choose your rating');
+      notification.info('Choose your rating');
     } else if (!email) {
-      alert('Enter your email');
+      notification.info('Enter your email');
     } else if (!review) {
-      alert('Leave a comment');
+      notification.info('Leave a comment');
     } else {
       try {
         const nextExercise = await api.setExerciseRating({
-          exerciseId,
+          exerciseId: currentExerciseId,
           rate: selectedRating,
           email,
           review,
         });
-        ratingModal.classList.add(CLASS_NAMES.visuallyHidden);
         clearRatingForm(form);
+        notification.success('Rating successfully updated');
+        ratingModal.classList.add(CLASS_NAMES.visuallyHidden);
         exerciseModal.classList.remove(CLASS_NAMES.visuallyHidden);
+
         updateModalContent(nextExercise);
       } catch (error) {
-        alert(`Error: ${error.message}`);
+        notification.error(
+          `Error: ${error?.response?.data?.message ?? error.message}`
+        );
       }
     }
     event.stopImmediatePropagation();
@@ -268,8 +272,7 @@ export function initModalListeners() {
   );
   openModalButtons.forEach(button => {
     button.addEventListener('click', event => {
-      const exerciseId = event.currentTarget.value;
-      loadModalData(exerciseId);
+      loadModalData(event.currentTarget.value);
     });
   });
 }
@@ -306,5 +309,3 @@ function addStars(starsCount, rating) {
 
   return elements;
 }
-
-initModalListeners();
