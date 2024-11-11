@@ -117,8 +117,6 @@
   padding-left: 48px;
 }
 
-
-
 @media screen and (min-width: 768px) {
   .quote-content {
     width: 574px;
@@ -333,9 +331,18 @@
 }
 
 .favorite-exercise-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 20px;
   line-height: 20px;
   line-height: 20px;
+}
+
+.exercise-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -398,28 +405,34 @@
   margin-right: 10px;
 }
 
-.exercise-category > span {
-  color: #242424;
-}
-
 .exercise-information {
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
 }
 
+.exercise-category > span {
+  color: var(--color-black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .favorites-gallery {
-  width: 100%;           
-  height: 500px;          
-  overflow-y: auto;       
-  overflow-y: scroll;     
-  overflow-x: hidden;     
+  width: 100%;
+  height: 500px;
+  overflow-y: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
   padding: 10px;
   box-sizing: border-box;
 }
 
 .gallery-list {
-  list-style-type: none; 
+  list-style-type: none;
   padding: 0;
   margin: 0;
 }

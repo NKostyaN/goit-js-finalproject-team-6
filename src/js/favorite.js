@@ -1,12 +1,27 @@
 import icons from '../img/icons/sprites.svg';
-import axios from 'axios';
-import { getFavorites, toggleFavorite } from './storage';
-import { api } from './api';
-import { initModalListeners } from './modal';
+import { getFavorites, toggleFavorite } from './storage.js';
+import { api } from './api.js';
+import * as utils from './utils.js'
+// import axios from 'axios';
+// import { initModalListeners } from './modal';
 
-async function renderQuote() {
-  const currentDate = new Date();
-  const currentDay = currentDate.getDate();
+
+
+async function renderQuote() {  function serviceQuote() {
+  const BASE_URL = "https://your-energy.b.goit.study/api";
+  const END_POINT = "quote";
+
+  return fetch(`${BASE_URL}/${END_POINT}`).then((resp) => {
+    if (!resp.ok) {
+      throw new Error(`Fetch error with ${resp.status}: ${resp.statusText}`);
+    }
+    return resp.json();
+  });
+}
+    const currentDate = new Date();
+    const currentDay = currentDate.getDate();
+
+
 
   let storedQuoteState = JSON.parse(localStorage.getItem('quoteData')) ?? {};
 
@@ -70,14 +85,16 @@ async function createExerciseCards(exercises) {
                         <use href="${icons}#icon-icon-2"></use>
                       </svg>
                       </div>
-                      <p class="favorite-exercise-name">${capitalize(name)}</p>
+                      <p class="favorite-exercise-name">${utils.capitalize(
+                        name
+                      )}</p>
                     </div> 
                     <div class="exercise-information">
                       <p class="exercise-category">Burned calories: <span>${burnedCalories}/${time}min</span></p>
-                      <p class="exercise-category">Body part: <span>${capitalize(
+                      <p class="exercise-category">Body part: <span>${utils.capitalize(
                         bodyPart
                       )}</span></p>
-                      <p class="exercise-category">Target: <span>${capitalize(
+                      <p class="exercise-category">Target: <span>${utils.capitalize(
                         target
                       )}</span></p>
                     </div>            

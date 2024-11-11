@@ -1,7 +1,7 @@
 import iconsPath from '../img/icons/sprites.svg';
-import { api } from './api';
-import { notification } from './notification';
-import { getFavorites, toggleFavorite } from './storage';
+import { api } from './api.js';
+import { notification } from './notification.js';
+import { getFavorites, toggleFavorite } from './storage.js';
 
 const SELECTORS = {
   closeModalButton: '[data-modal-close]',

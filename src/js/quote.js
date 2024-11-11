@@ -1,5 +1,4 @@
-// import axios from 'axios';
-import { api } from './api';
+import { api } from './api.js';
 
 const quoteElement = document.querySelector('.quote-text');
 const authorElement = document.querySelector('.quote-author');

@@ -1,5 +1,6 @@
-import { initModalListeners } from './modal';
-import { api } from './api';
+import { initModalListeners } from './modal.js';
+import { api } from './api.js';
+import * as utils from './utils.js';
 
 export function initializeExercises() {
   loadExercises();
@@ -121,15 +122,20 @@ function renderExerciseDetailsPage(exercises) {
     exerciseElement.innerHTML = `
       <div class="exercise-details__item">
         <div class="exercise-header">
-          <button type="button" class='btn-workout'>WORKOUT</button>
+        <div class="exercise-header-left">
+          <p class="exercise-workout">WORKOUT</p>
           <div class="exercise-rating">${
             exerciseDetail.rating || 'Немає даних'
           } <span>⭐</span></div>
+          </div>
           <button type="button" class="btn-start" data-modal-open value="${
             exerciseDetail._id
           }">Start ➔</button>
         </div>
-        <h3 class="exercise-name">${exerciseDetail.name}</h3>
+        <h3 class="exercise-name">
+          <svg class="exercise-name-icon" width="24" height="24">
+            <use href="../img/icons/sprites.svg#icon-icon-2"></use>
+          </svg>${utils.capitalize(exerciseDetail.name)}</h3>
         <div class="exercise-info">
           <p class="truncate-text"><strong class="exercise-info-title">Burned calories:</strong> ${
             exerciseDetail.burnedCalories
