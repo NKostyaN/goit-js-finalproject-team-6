@@ -346,7 +346,6 @@
 
 .exercise-tittle {
   display: flex;
-  margin-top: 27px;
   text-align: left;
   gap: 16px;
 }
@@ -395,13 +394,12 @@
   margin-right: 10px;
 }
 
-.exercise-information {
-  /* white-space: nowrap; */
-  /* overflow: hidden; */
-  /* text-overflow: ellipsis; */
+.exercise-info {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   display: flex;
   justify-content: space-between;
-  margin-top: 16px;
 }
 
 .exercise-category > span {
