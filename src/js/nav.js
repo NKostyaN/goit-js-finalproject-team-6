@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     currentPath = parts[parts.length - 1];
   }
 
-  console.log(currentPath);
   navLinks.forEach(link => {
     if (link.getAttribute('href').endsWith(currentPath)) {
       link.classList.add('active');
