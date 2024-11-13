@@ -152,7 +152,8 @@
   max-height: 216px;
 }
 
-.exercises__item:hover {
+.exercises__item:hover,
+.exercises__item:focus {
   cursor: pointer;
   transform: translate(0px, -2px);
   box-shadow: 0px 4px 4px 1px var(--color-modal-backdrop);
@@ -329,8 +330,8 @@
   background-color: #fff;
 }
 
-.exercise-item:hover {
-  /* transform: translate(0px, -2px); */
+.exercise-item:hover,
+.exercise-item:focus {
   box-shadow: 0px 4px 4px 1px var(--color-grey);
 }
 
