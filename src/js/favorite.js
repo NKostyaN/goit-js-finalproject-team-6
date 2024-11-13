@@ -40,9 +40,13 @@ async function renderQuote() {
 renderQuote();
 
 const Refs = {
+  galleryContainer: document.querySelector('.favorites-gallery'),
   galleryList: document.querySelector('.gallery-list'),
   defaultText: document.querySelector('.js-hidden-text'),
 };
+
+Refs.defaultText.style.display = 'none';
+Refs.galleryContainer.style.display = 'none';
 
 async function getAllFavoriteModels(exercises) {
   const exModels = await Promise.all(
@@ -104,7 +108,7 @@ function renderExercises(exercises) {
       Refs.galleryList.insertAdjacentHTML('beforeend', cards);
 
       Refs.defaultText.style.display = 'none';
-      Refs.galleryList.style.display = 'flex';
+      Refs.galleryContainer.style.display = 'block';
 
       const cardsEl = document.querySelectorAll('.exercise-card');
       for (let card of cardsEl) {
@@ -113,7 +117,7 @@ function renderExercises(exercises) {
 
       if (exercises.length === 0) {
         Refs.defaultText.style.display = 'flex';
-        Refs.galleryList.style.display = 'none';
+        Refs.galleryContainer.style.display = 'none';
       }
 
       initModalListeners();
